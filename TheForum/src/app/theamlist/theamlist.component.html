@@ -1,0 +1,11 @@
+<mat-list>
+   <h3 matSubheader>List of theams</h3>
+   <mat-list-item *ngFor="let theam of theams">
+      <mat-icon matListIcon [routerLink]="['/theamfullview']" [queryParams]="theam">folder</mat-icon>
+      <h4 matLine id="{{theam.id}}">{{theam.title}}</h4>
+      <p matLine class="demo-2"> {{theam.body}} </p>
+   </mat-list-item>
+   
+
+</mat-list>
+<app-theamform></app-theamform>

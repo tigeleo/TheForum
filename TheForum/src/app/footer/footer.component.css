@@ -1,0 +1,79 @@
+.fc1screenWidthBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.fc1centeredContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.fc1bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.fc1inlineContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.txtNew {
+    word-wrap: break-word;
+}
+
+.txtNew p {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.font_9 {
+    font: normal normal normal 14px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    color: #2F2E2E;
+}
+
+.pc1screenWidthBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.pc1centeredContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.wrapper.visible {
+    display: block;
+}
+
+.siteAspectsContainer {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.s_DtaksTPAWidgetSkin {
+    overflow: hidden;
+}
+

@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css?family=Raleway:300,700'); */
+/*
+
+body {
+    background:#2E9CE6;
+    padding: 3em;
+    font-family: 'Raleway', 'Arial';
+    color:#fff;
+}
+ul {
+    list-style-type:none;
+    margin:0 0 2em 0;
+    padding:0;
+}
+ul li {
+    display:inline;
+    margin-right: 30px;
+}
+ul li a {
+    font-size: 1.5em;
+}
+a {
+    color:#fff;
+    text-decoration:none;
+}
+*/
+
+element.style {
+}
+
+
+body, html {
+    height: 100%;
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body, html {
+    height: 100%;
+}
+
+
+html[Attributes Style] {
+    -webkit-locale: "ru";
+}
+user agent stylesheet
+html {
+    display: block;
+    
+}
+
+body {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+body, html {
+    height: 100%;
+}
+
+
+body {
+    font-size: 10px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+._2ftM2 {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    margin: 0;
+    padding: 0 24px;
+    border: 0;
+    border-style: none;
+    cursor: pointer;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.aUCPp {
+    height: 36px;
+    margin-left: 24px;
+}
+
+._2G3w- {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 14px;
+}
+

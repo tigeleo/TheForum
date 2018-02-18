@@ -1,0 +1,50 @@
+
+.hc1inlineContent {
+    /*position: absolute;*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.hc1screenWidthBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.txtNew a {
+    color: inherit;
+}
+
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.c4inlineContent, .c4bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.c4bg {
+    border: 4px solid rgba(160, 160, 159, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0;
+}
+a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.font_0 {
+    font: normal normal bold 40px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    color: #A0A09F;
+}

@@ -1,0 +1,275 @@
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.col-md-6{
+    width: 800px;
+    margin: auto;
+    background: transparent;
+    color: #2F2E2E;
+    font-family: Helvetica;
+	
+}
+
+.form-group{
+    width: 100%;
+    /*text-align: center;*/
+	font-size: 1em;
+}
+
+.InnerInputLabel{
+	display: none;
+}
+
+
+.form-control{
+	height: 48px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: 300;
+    color: #2F2E2E;
+    line-height: 14px;
+    text-align: left;
+    padding: 0 12px;
+    width: 50%;
+}
+
+.s_ucNUmemberLoginDialogSkinNew[data-state~="desktop"] .s_ucNUmemberLoginDialogSkinNew_wrapper {
+    width: 450px;
+    display: inline-block;
+}
+
+.s_ucNUmemberLoginDialogSkinNew_wrapper {
+    background: transparent;
+    color: #2F2E2E;
+    font-family: Helvetica;
+}
+.s_ucNUmemberLoginDialogSkinNew[data-state~="desktop"] .s_ucNUmemberLoginDialogSkinNewcontentWrapper.s_ucNUmemberLoginDialogSkinNew_horizontal {
+    width: 800px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+.s_ucNUmemberLoginDialogSkinNew[data-state~="desktop"] .s_ucNUmemberLoginDialogSkinNewcontentWrapper.s_ucNUmemberLoginDialogSkinNew_horizontal .s_ucNUmemberLoginDialogSkinNew_customLogin {
+    width: 50%;
+}
+
+.s_ucNUmemberLoginDialogSkinNew[data-state~="desktop"] .s_ucNUmemberLoginDialogSkinNewcontentWrapper.s_ucNUmemberLoginDialogSkinNew_horizontal .s_ucNUmemberLoginDialogSkinNew_customLogin {
+    width: 50%;
+}
+.s_ucNUmemberLoginDialogSkinNew_customLogin {
+    width: 50%;
+}
+
+
+.s_ucNUmemberLoginDialogSkinNewdialog {
+    top: calc(50% - 250px);
+    box-sizing: content-box;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+.s_ucNUmemberLoginDialogSkinNewdialog {
+    top: calc(50% - 250px);
+    box-sizing: content-box;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.s_ucNUmemberLoginDialogSkinNew {
+    width: 100%;
+    height: 100%;
+    z-index: 100001;
+    font-size: 1em;
+    color: #9C9C9C;
+}
+
+.s_ucNUmemberLoginDialogSkinNew {
+    width: 100%;
+    height: 100%;
+    z-index: 100001;
+    font-size: 1em;
+    color: #9C9C9C;
+}
+
+.s_ucNUmemberLoginDialogSkinNewinputWithValidation {
+    font-size: 1em;
+}
+
+.s_ucNUmemberLoginDialogSkinNewemail label, .s_ucNUmemberLoginDialogSkinNewpassword label {
+    display: none;
+}
+
+.s_ucNUmemberLoginDialogSkinNewinputWithValidationlabel {
+    float: none;
+    font-size: 17px;
+    line-height: 25px;
+    color: #585858;
+}
+
+.s_ucNUmemberLoginDialogSkinNewinputWithValidationinput.s_ucNUmemberLoginDialogSkinNewinputWithValidation_new {
+    height: 48px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: 300;
+    color: #2F2E2E;
+    line-height: 14px;
+    text-align: left;
+    padding: 0 12px;
+}
+
+
+.s_ucNUmemberLoginDialogSkinNewemail input {
+    padding-left: 0;
+    height: 48px;
+    font-size: 32px;
+    line-height: 32px;
+    background-color: transparent;
+    border: 1px solid #A0A09F;
+    border-radius: 0;
+    -webkit-appearance: none;
+    color: #2F2E2E;
+}
+ .s_ucNUmemberLoginDialogSkinNewpassword input {
+    padding-left: 0;
+    height: 48px;
+    font-size: 32px;
+    line-height: 32px;
+    background-color: transparent;
+    border: 1px solid #A0A09F;
+    border-radius: 0;
+    -webkit-appearance: none;
+    color: #2F2E2E;
+}
+.s_ucNUmemberLoginDialogSkinNewretypePassword input {
+    padding-left: 0;
+    height: 48px;
+    font-size: 32px;
+    line-height: 32px;
+    background-color: transparent;
+    border: 1px solid #A0A09F;
+    border-radius: 0;
+    -webkit-appearance: none;
+    color: #2F2E2E;
+}
+
+.s_ucNUmemberLoginDialogSkinNewinputWithValidationinput {
+    width: 100%;
+    font-size: 19px;
+    line-height: 42px;
+    color: #0198ff;
+    margin: 0 -3px;
+    box-sizing: border-box;
+}
+
+input, select, textarea {
+    font-family: Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+}
+user agent stylesheet
+input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    padding: 1px 0px;
+}
+.s_ucNUmemberLoginDialogSkinNew[data-state~="canBeClosed"] .s_ucNUmemberLoginDialogSkinNew_footer {
+    padding-bottom: 10px;
+}
+
+.s_ucNUmemberLoginDialogSkinNewsubmitButton, .s_ucNUmemberLoginDialogSkinNewokButton {
+    height: 44px;
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 44px;
+    padding: 0;
+}
+.s_ucNUmemberLoginDialogSkinNew_footer {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.s_ucNUmemberLoginDialogSkinNewsubmitButton, .s_ucNUmemberLoginDialogSkinNewokButton {
+    height: 44px;
+    width: 50%;
+    border: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 44px;
+    padding: 0;
+}
+
+
+.b1[data-state~="shouldUseFlex"][data-state~="center"] .b1link, .b1[data-state~="shouldUseFlex"][data-state~="center"] .b1labelwrapper {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+
+.b1[data-disabled="false"] .b1link {
+    background-color: rgba(114, 114, 114, 1);
+    border: solid rgba(96, 94, 94, 1) 0px;
+    cursor: pointer !important;
+}
+
+.b1[data-state~="shouldUseFlex"] .b1link, .b1[data-state~="shouldUseFlex"] .b1labelwrapper {
+    text-align: initial;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.b1link {
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+}

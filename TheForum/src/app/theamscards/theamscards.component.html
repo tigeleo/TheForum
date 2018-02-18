@@ -1,0 +1,23 @@
+<mat-grid-list cols="3"  rowHeight="500px">
+
+  <mat-grid-tile     *ngFor="let theam of Theams"    >
+    <mat-card class="example-card" id="theam-card-{{theam.id}}">
+	  <mat-card-header>
+	    <mat-card-title  class="sb-description"><h3 style="color: #20303c;">{{theam.title}}</h3></mat-card-title>
+	    <mat-card-subtitle>{{theam.text}}</mat-card-subtitle>
+	  </mat-card-header>
+	  <img mat-card-image src="{{theam.img}}" alt="{{theam.text}}" width="253" height="253">
+
+	  <mat-card-content>
+	    <p>
+	      {{theam.text}}
+	    </p>
+	  </mat-card-content>
+	  <mat-card-actions>
+	    <button mat-button [routerLink]="['/theamslist']" [queryParams]="{id: theam.id}">GO TO DISCUSE</button>
+	    <button mat-button>SHARE</button>
+	  </mat-card-actions>
+	</mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
