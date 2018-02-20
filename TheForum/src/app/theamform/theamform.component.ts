@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TheamformService } from './theamform.service';
 import { Theam } from '../_models/index';
 import { AlertService } from '../_services/index';
@@ -14,6 +14,7 @@ export class TheamformComponent implements OnInit {
   model: any = {};
   loading = false;
   returnUrl: string;
+    @Input() theamid: number;
       
   constructor(private route: ActivatedRoute,
         private router: Router,
@@ -23,6 +24,7 @@ export class TheamformComponent implements OnInit {
   ngOnInit() {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+      console.log("Dicussion list of theam : " + this.theamid);
   }
     
 
@@ -30,7 +32,7 @@ export class TheamformComponent implements OnInit {
 
     createNewDiscution() {
         this.loading = true;
-        this.theamformService.createNewDiscusion(this.model)
+        this.theamformService.createNewDiscusion({"theamid":this.theamid, "theam": this.model})
             .subscribe(
                 data => {
                     console.log(data);

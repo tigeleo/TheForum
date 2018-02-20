@@ -26,6 +26,7 @@ export class TheamlistComponent implements OnInit {
 
       ];    
     returnUrl: string;
+    theamid:number;
     
   constructor(        private route: ActivatedRoute,
         private router: Router,
@@ -42,7 +43,9 @@ export class TheamlistComponent implements OnInit {
 
 
     private loadAllTheams() {
-        this.theamlistService.getById(1).subscribe(
+        console.log("id="+this.route.queryParams.getValue().id);
+        this.theamid=this.route.queryParams.getValue().id;
+        this.theamlistService.getById(this.theamid).subscribe(
             theams => { this.theams=theams;
                         console.log(this.theams);
 

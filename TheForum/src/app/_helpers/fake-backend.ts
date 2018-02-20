@@ -62,16 +62,21 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // add new discussion
             if (request.url.endsWith(myGlobals.backendApiLinks.theamadd) && request.method === 'POST') {
                 
-                let theam=request.body;
+                let discussion=request.body;
+
+                console.log(discussion.theamid);
+                console.log(discussion.theam);
+                let theamid=discussion.theamid;
                 
                 let theamlist =myData.DATA_DISCUTIONS.discussions;
                 
                 let filteredtheamlist = theamlist.filter(theam => {
-                    return theam.theamid === 1;
+                    return theam.theamid == theamid;
                 });  
-                filteredtheamlist[0].theams=filteredtheamlist[0].theams.concat(theam);
+                 console.log(filteredtheamlist);
+               filteredtheamlist[0].theams=filteredtheamlist[0].theams.concat(discussion.theam);
                 
-                return Observable.of(new HttpResponse({ status: 200, body: theam }));
+                return Observable.of(new HttpResponse({ status: 200, body: discussion }));
             }
            
             // get users
