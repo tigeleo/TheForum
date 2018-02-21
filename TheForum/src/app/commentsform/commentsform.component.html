@@ -1,0 +1,24 @@
+<div *ngIf="isAuthenticated">
+<form name="form" (ngSubmit)="f.form.valid && createNewComment()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !title.valid }">
+            <label class="InnerInputLabel" for="TheamName">DiscussionTitle</label>
+            <input placeholder="Discussion Title" aria-label="Theam Name"  type="text" class="form-control" name="title" [(ngModel)]="model.title" #title="ngModel" required />
+            <div *ngIf="f.submitted && !title.valid" class="help-block">Discussion title required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !body.valid }">
+            <label class="InnerInputLabel" for="DiscussionDescription">Discussion Description</label>
+            <textarea placeholder="Discussion Description" aria-label="Discussion Description"  type="text" class="form-control" name="DiscussionDescription" [(ngModel)]="model.body" #body="ngModel" required ></textarea>
+            <div *ngIf="f.submitted && !body.valid" class="help-block">Discussion Description required</div>
+        </div>
+        <div class="form-group">
+			<button [disabled]="loading" id="memberLoginDialogokButton" class="s_ucNUmemberLoginDialogSkinNewokButton">
+				<div id="memberLoginDialogok" data-align="center" data-disabled="false" data-should-use-flex="true" class="b1" data-state="desktop shouldUseFlex center" style="position: relative; height: 100%; width: 100%;">
+					<div id="memberLoginDialogoklink" class="g-transparent-a b1link">
+						<span id="memberLoginDialogoklabel" class="b1label">Create New Discussion</span>
+					</div>
+				</div>
+			</button>        
+             <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+         </div>       
+</form>
+</div>

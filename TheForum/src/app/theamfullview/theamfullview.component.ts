@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentslistComponent } from '../commentslist/commentslist.component';
-import { CommnetsformComponent } from '../commnetsform/commnetsform.component';
+import { CommentsformComponent } from '../commentsform/commentsform.component';
 import { Theam } from '../_models/index';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TheamformService } from './theamform.service';
-import { Theam } from '../_models/index';
+import { Discussion, Theam } from '../_models/index';
 import { AlertService } from '../_services/index';
 
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./theamform.component.css']
 })
 export class TheamformComponent implements OnInit {
-  model: any = {};
+  model: Theam = {id:-1,title:"",body:""};
   loading = false;
   returnUrl: string;
     @Input() theamid: number;
@@ -32,7 +32,7 @@ export class TheamformComponent implements OnInit {
 
     createNewDiscution() {
         this.loading = true;
-        this.theamformService.createNewDiscusion({"theamid":this.theamid, "theam": this.model})
+        this.theamformService.createNewDiscusion({theamid:this.theamid, theam: this.model})
             .subscribe(
                 data => {
                     console.log(data);

@@ -19,6 +19,7 @@ export const backendApiLinks = {
     theamslist_regexp: /\/api\/theamslist\/\d+$/,
     commentslist: API_BASE_NAME+'/api/commentslist/',
     commentslist_regexp: /\/api\/commentslist\/\d+$/,
+    commentadd: API_BASE_NAME+'/api/comments/add',
     
 };
 

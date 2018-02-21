@@ -113,24 +113,33 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 }
             }
 
-            // get theamslist
+            // get comments list
             if (request.url.match(myGlobals.backendApiLinks.commentslist_regexp) && request.method === 'GET') {
                 // find user by id in users array
                 let urlParts = request.url.split('/');
-                let theamid = parseInt(urlParts[urlParts.length - 1]);               
+                let discussionid = parseInt(urlParts[urlParts.length - 1]);               
                 
-                let comentlist =myData.DATA_COMMENCTS;
+                let commentlist =myData.DATA_COMMENCTS;
                 
-                let filteredTheams  = comentlist.commentslist;
+                let filteredComments  = commentlist.commentslist.filter(comment => {
+                        return comment.discussionid==discussionid;
+                    });
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
-                if (filteredTheams) {
-                    return Observable.of(new HttpResponse({ status: 200, body: filteredTheams }));
+                if (filteredComments) {
+                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,parentid:discussionid,author:c.user,body:c.body};});
+                   console.log("arrayComments:");
+                   console.log(filteredComments[0]);
+                    
+                    
+                    return Observable.of(new HttpResponse({ status: 200, body: {comments:arrayComments} }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return Observable.throw('No theams found.');
+                    return Observable.throw('No comment found.');
                 }
             }            
+            
+          
             
             // get user by id
             if (request.url.match(myGlobals.backendApiLinks.users_regexp) && request.method === 'GET') {

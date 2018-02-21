@@ -29,11 +29,13 @@ import { TheamscardsComponent } from './theamscards/theamscards.component';
 import { TheamsCardsService } from './theamscards/theamscards.service';
 import { TheamlistComponent } from './theamlist/theamlist.component';
 import { TheamlistService } from './theamlist/theamlist.service';
+import { CommentslistService } from './commentslist/commentslist.service';
 import { TheamfullviewComponent } from './theamfullview/theamfullview.component';
 import { TheamformComponent } from './theamform/theamform.component';
 import { TheamformService } from './theamform/theamform.service';
 import { CommentslistComponent } from './commentslist/commentslist.component';
-import { CommnetsformComponent } from './commnetsform/commnetsform.component';
+import { CommentsformComponent } from './commentsform/commentsform.component';
+import { CommentsformService } from './commentsform/commentsform.service';
 
 
 @NgModule({
@@ -51,7 +53,7 @@ import { CommnetsformComponent } from './commnetsform/commnetsform.component';
     TheamfullviewComponent,
     TheamformComponent,
     CommentslistComponent,
-    CommnetsformComponent
+    CommentsformComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,8 @@ import { CommnetsformComponent } from './commnetsform/commnetsform.component';
         TheamlistService,
         TheamformService,
         TheamsCardsService,
+        CommentslistService,
+        CommentsformService,
         UserService,
         {
             provide: HTTP_INTERCEPTORS,
