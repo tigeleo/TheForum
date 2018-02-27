@@ -120,37 +120,89 @@ export const DATA_DISCUTIONS={
 export const DATA_COMMENCTS={commentslist:
                     [{discussionid:1,
                     comments:[
-                        {"id":1,"user":"MisterX",     "body": "I fine" },
-                        {"id":2,"user":"MisterY",     "body": "I fine" },
-                        {"id":3,"user":"MisterY",     "body": "I fine" },
-                        {"id":4,"user":"MisterY",     "body": "I fine" },
-                        {"id":5,"user":"MisterY",     "body": "I fine" },
-                        {"id":6,"user":"MisterY",     "body": "I fine" },
-                        {"id":7,"user":"MisterY",     "body": "I fine" },
+                        {"id":1,"user":"MisterX",     "body": "I fine", comments:[
+                                 {"id":50,"user":"MisterZ",     "body": "I fine", comments:[] },
+                                 {"id":51,"user":"MisterY",     "body": "I fine", comments:[] },
+                                 {"id":52,"user":"MisterZ",     "body": "I fine", comments:[] },
+                                 {"id":53,"user":"MisterY",     "body": "I fine", comments:[] },
+                                 {"id":54,"user":"MisterZ",     "body": "I fine", comments:[] },
+                                 {"id":55,"user":"MisterY",     "body": "I fine", comments:[] },
+                                 {"id":56,"user":"MisterZ",     "body": "I fine", comments:[] },   
+                            ] },
+                        {"id":2,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":3,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":4,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":5,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":6,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":7,"user":"MisterY",     "body": "I fine", comments:[] },
                          
                     ]},
                     {discussionid:2,
                     comments:[
-                        {"id":1,"user":"MisterZ",     "body": "I fine" },
-                        {"id":2,"user":"MisterY",     "body": "I fine" },
-                        {"id":3,"user":"MisterZ",     "body": "I fine" },
-                        {"id":4,"user":"MisterY",     "body": "I fine" },
-                        {"id":5,"user":"MisterZ",     "body": "I fine" },
-                        {"id":6,"user":"MisterY",     "body": "I fine" },
-                        {"id":7,"user":"MisterZ",     "body": "I fine" },
+                        {"id":8,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":9,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":10,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":11,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":12,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":13,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":14,"user":"MisterZ",     "body": "I fine", comments:[] },
                          
                     ]}  ,
                    {discussionid:3,
                     comments:[
-                        {"id":1,"user":"MisterZ",     "body": "I fine" },
-                        {"id":2,"user":"MisterY",     "body": "I fine" },
-                        {"id":3,"user":"MisterZ",     "body": "I fine" },
-                        {"id":4,"user":"MisterY",     "body": "I fine" },
-                        {"id":5,"user":"MisterZ",     "body": "I fine" },
-                        {"id":6,"user":"MisterY",     "body": "I fine" },
-                        {"id":7,"user":"MisterZ",     "body": "I fine" },
+                        {"id":15,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":16,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":17,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":18,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":19,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":20,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":21,"user":"MisterZ",     "body": "I fine", comments:[] },
                          
-                    ]}                  
+                    ]},
+                   {discussionid:4,
+                    comments:[
+                        {"id":22,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":23,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":24,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":25,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":26,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":27,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":28,"user":"MisterZ",     "body": "I fine", comments:[] },
+                         
+                    ]}   ,
+                   {discussionid:5,
+                    comments:[
+                        {"id":29,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":30,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":31,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":32,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":33,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":34,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":35,"user":"MisterZ",     "body": "I fine", comments:[] },
+                         
+                    ]}   ,
+                   {discussionid:6,
+                    comments:[
+                        {"id":36,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":37,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":38,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":39,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":40,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":41,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":42,"user":"MisterZ",     "body": "I fine", comments:[] },
+                         
+                    ]}   ,
+                   {discussionid:7,
+                    comments:[
+                        {"id":43,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":44,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":45,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":46,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":47,"user":"MisterZ",     "body": "I fine", comments:[] },
+                        {"id":48,"user":"MisterY",     "body": "I fine", comments:[] },
+                        {"id":49,"user":"MisterZ",     "body": "I fine", comments:[] },
+                         
+                    ]}                     
                 
                     ]
                         
