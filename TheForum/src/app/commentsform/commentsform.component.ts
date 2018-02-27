@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Comment } from '../_models/index';
 import { AuthenticationService } from '../_services/index';
 import { AlertService } from '../_services/index';
@@ -10,11 +10,17 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './commentsform.component.html',
   styleUrls: ['./commentsform.component.css']
 })
+
+    
 export class CommentsformComponent implements OnInit {
-  model: Comment = {id:-1,parentid:-1,author:"",body:""};
+  model: Comment = {id:-1,discussionid:-1,author:"",body:"",answeredid:-1,comments:[]};
   loading = false;
+  display:boolean =true;
   returnUrl: string;
   @Input() discussionid:number;
+  @Input() answeredid:number=-1;
+    
+  @Output() hideform = new EventEmitter<number>();
     
   constructor(private authenticationService: AuthenticationService,
         private route: ActivatedRoute,
@@ -23,17 +29,17 @@ export class CommentsformComponent implements OnInit {
         private alertService: AlertService) { }
 
   ngOnInit() {
-      this.model.parentid=this.discussionid;
-      this.model.author=this.authenticationService.currentUser.username;
+      this.model.discussionid=this.discussionid;
+      this.model.answeredid=this.answeredid;
   }
     public get isAuthenticated(){
-        console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
         return this.authenticationService.isAuthenticated;
     }
 
     createNewComment() {
         this.loading = true;
-        this.commnetsformService.createNewComment( this.model)
+       this.model.author=this.authenticationService.currentUser.username;
+       this.commnetsformService.createNewComment( this.model)
             .subscribe(
                 data => {
                     console.log(data);
@@ -44,6 +50,11 @@ export class CommentsformComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
-    }  
+    } 
+    
+    
+    cancelComment(){
+        this.hideform.next(this.answeredid);
+    }
 
 }

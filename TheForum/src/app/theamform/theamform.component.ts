@@ -23,8 +23,8 @@ export class TheamformComponent implements OnInit {
 
   ngOnInit() {
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-      console.log("Dicussion list of theam : " + this.theamid);
+        this.returnUrl = '/theamslist?id='+this.theamid;
+
   }
     
 

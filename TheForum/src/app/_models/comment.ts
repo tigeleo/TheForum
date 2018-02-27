@@ -1,6 +1,7 @@
 ﻿export class Comment {
     id: number;
-    parentid:number;
+    discussionid:number;
     author: string;
     body: string;
+    answeredid: number;
 }

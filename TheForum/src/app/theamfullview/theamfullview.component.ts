@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { CommentslistComponent } from '../commentslist/commentslist.component';
 import { CommentsformComponent } from '../commentsform/commentsform.component';
 import { Theam } from '../_models/index';
@@ -12,9 +12,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class TheamfullviewComponent implements OnInit {
   theam:Theam;
   returnUrl: string;
+
     
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { 
-     this.returnUrl = '/theamslist';
 
   }
 
@@ -35,6 +35,7 @@ export class TheamfullviewComponent implements OnInit {
         let body = params["body"];
         this.theam = {id:id,title:title, body:body};    
       });
+     this.returnUrl = '/theamslist';
 
 
  }

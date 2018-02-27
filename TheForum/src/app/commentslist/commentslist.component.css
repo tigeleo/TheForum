@@ -1,0 +1,41 @@
+.forum-content-medium-font {
+    font: normal normal normal 15px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.forum-text-color {
+    color: #2F2E2E;
+}
+
+._2NZd5 {
+    cursor: pointer;
+}
+
+.forum-card-border-color {
+    border-color: #CCCCCC;
+}
+
+@media (min-width: 940px)
+comment-form-wrapper.scss:7
+.QyFVJ {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 12px;
+    min-height: 105px;
+    font-size: 16px;
+    border-style: solid;
+}

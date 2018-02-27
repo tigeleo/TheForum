@@ -1,11 +1,24 @@
 <mat-list>
-   <h3 matSubheader>List of comments{{discussionid}}</h3>
+   <dl style="margin-left: 40px">
    <mat-list-item *ngFor="let comment of comments">     
-      <h4 matLine id="{{comment.id}}">{{comment.author}}</h4>
-      <p matLine class="demo-2"> {{comment.body}} </p>
+      <dt matLine id="{{comment.id}}">{{comment.author}}</dt>
+      <dd matLine class="demo-2"> {{comment.body}} 
+      <app-commentsform *ngIf="isAuthenticated&&isReplayed(comment.id)" (hideform)="hideReplayed($event)"  [discussionid]="discussionid" [answeredid]="comment.id"></app-commentsform>
+      <div>
+	      <button *ngIf="isAuthenticated&&!isReplayed(comment.id)" (click)="doReplay(comment.id)" mat-button> 
+	      	<mat-icon aria-label="Like comment">replay</mat-icon>
+	      </button>
+		  <button (click)="doLike(comment.id)" mat-icon-button color="accent">
+		    <mat-icon aria-label="Like comment">favorite</mat-icon>
+		  </button>
+		  <button (click)="doDislike(comment.id)" mat-icon-button color="warn">
+		    <mat-icon aria-label="Disslike comment">thumb_down</mat-icon>
+		  </button>  
+	  </div> 
+	     
+      </dd>
    </mat-list-item>
-   
-
+	</dl>
 </mat-list>
 
-<app-commentsform [discussionid]="discussionid"></app-commentsform>
+<app-commentsform [discussionid]="discussionid" ></app-commentsform>

@@ -48,13 +48,14 @@ export class TheamlistComponent implements OnInit {
         this.theamlistService.getById(this.theamid).subscribe(
             theams => { this.theams=theams;
                         console.log(this.theams);
+                
 
             }
         );
     }
     
     public openTeam(theamid){
-        this.router.navigate(['theamfullview']);        
+        this.router.navigate(['theamfullview',{theamid:theamid}]);        
     }
 
     public backtoSubList(){

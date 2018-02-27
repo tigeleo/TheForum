@@ -127,7 +127,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 if (filteredComments) {
-                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.user,body:c.body,answeredid:-1,comments:c.comments};});
+                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.user,body:c.body,answeredid:-1};});
                    console.log("arrayComments:");
                    console.log(filteredComments[0]);
                     
