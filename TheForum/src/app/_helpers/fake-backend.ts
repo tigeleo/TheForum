@@ -59,6 +59,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return Observable.of(new HttpResponse({ status: 200, body: theams }));
             }
              
+            // get discussion list
+            if (request.url.endsWith(myGlobals.backendApiLinks.userslist) && request.method === 'GET') {
+                
+                let users=myData.DATA_USERS;
+
+ 
+                return Observable.of(new HttpResponse({ status: 200, body: users }));
+            }
+             
             // add new discussion
             if (request.url.endsWith(myGlobals.backendApiLinks.theamadd) && request.method === 'POST') {
                 
@@ -77,6 +86,29 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                filteredtheamlist[0].theams=filteredtheamlist[0].theams.concat(discussion.theam);
                 
                 return Observable.of(new HttpResponse({ status: 200, body: discussion }));
+            }
+           
+            // add new comment
+            if (request.url.endsWith(myGlobals.backendApiLinks.commentadd) && request.method === 'POST') {
+                
+                let comment=request.body;
+
+                console.log(comment);
+
+                let discussionid=comment.discussionid;
+                let answeredid=comment.answeredid;
+                
+                let commentlist =myData.DATA_COMMENCTS;
+                
+                let filteredComments  = commentlist.commentslist.filter(comment => {
+                        return comment.discussionid==discussionid;
+                 });
+                 
+                 console.log("Comments filters:");
+                 console.log(filteredComments);
+               filteredComments[0].comments=filteredComments[0].comments.concat({"id":comment.id,"author":comment.author,     "body":comment.body });
+                
+                return Observable.of(new HttpResponse({ status: 200, body: filteredComments[0] }));
             }
            
             // get users
@@ -127,7 +159,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 if (filteredComments) {
-                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.user,body:c.body,answeredid:-1};});
+                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.author,body:c.body,answeredid:-1};});
                    console.log("arrayComments:");
                    console.log(filteredComments[0]);
                     

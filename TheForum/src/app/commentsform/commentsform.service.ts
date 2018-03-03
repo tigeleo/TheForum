@@ -12,10 +12,10 @@ export class CommentsformService {
     
     createNewComment(comment: Comment) {
         return this.http.post<any>(myGlobals.backendApiLinks.commentadd, comment)
-            .map(theam => {
+            .map(comment => {
 
-                console.log(theam);
-                return theam;
+                console.log(comment);
+                return comment;
             });    
     }
     

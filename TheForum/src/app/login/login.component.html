@@ -4,7 +4,9 @@
 	{{currectUser.username}} -
 	{{currectUser.firstName}}+{{currectUser.lastname}}
 	<button class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath" mat-button (click)="logout()"><span class="_2G3w-" data-reactid="30">Log Out</span></button>
-</div>
+	<button	class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath" mat-button [routerLink]="['/userslist']">
+	<span class="_2G3w-" data-reactid="30">Staff Manager</span>
+	</button></div>
 </div>
 <div *ngIf="isNotAuthenticated">
 <div class="_3yEWu hold-right" data-reactid="11">

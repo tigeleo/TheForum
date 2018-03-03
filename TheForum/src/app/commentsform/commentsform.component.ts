@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
     
 export class CommentsformComponent implements OnInit {
-  model: Comment = {id:-1,discussionid:-1,author:"",body:"",answeredid:-1,comments:[]};
+  model: Comment = {id:-1,discussionid:-1,author:"",body:"",answeredid:-1};
   loading = false;
   display:boolean =true;
   returnUrl: string;
@@ -43,6 +43,7 @@ export class CommentsformComponent implements OnInit {
             .subscribe(
                 data => {
                     console.log(data);
+                    this.model.body=""; 
                     this.loading = false;
                    
                 },
@@ -50,11 +51,12 @@ export class CommentsformComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+       
     } 
     
     
     cancelComment(){
-        this.hideform.next(this.answeredid);
+        this.model.body="";
     }
 
 }

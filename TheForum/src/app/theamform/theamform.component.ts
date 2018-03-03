@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./theamform.component.css']
 })
 export class TheamformComponent implements OnInit {
-  model: Theam = {id:-1,title:"",body:""};
+  model: Theam = {id:-1,title:"",body:"",author:"",author_role:"",watchers:0,comments:0,created:""};
   loading = false;
   returnUrl: string;
     @Input() theamid: number;

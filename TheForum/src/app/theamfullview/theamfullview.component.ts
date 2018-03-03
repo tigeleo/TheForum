@@ -30,10 +30,15 @@ export class TheamfullviewComponent implements OnInit {
       });
 */
        this.activatedRoute.queryParams.subscribe((params: Params) => {
-         let id = params["id"];
+        let id = params["id"];
         let title = params["title"];
         let body = params["body"];
-        this.theam = {id:id,title:title, body:body};    
+        let author = params["author"];
+        let author_role = params["author_role"];
+        let watchers = params["watchers"];
+        let comments = params["comments"];
+        let created = params["created"];
+        this.theam = {id:id,title:title, body:body,author:author,author_role:author_role,watchers:watchers,comments:comments,created:created};    
       });
      this.returnUrl = '/theamslist';
 

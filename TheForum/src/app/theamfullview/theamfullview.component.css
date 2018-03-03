@@ -1,0 +1,13 @@
+mat-card-title {
+  color: white;
+  background-color: blue;
+  font-size:20px;
+}
+
+mat-card {
+  background: #fff;
+  border-radius: 3px;
+  margin: 2rem;
+  border:1px;
+}
+

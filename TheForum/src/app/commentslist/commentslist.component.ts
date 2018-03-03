@@ -8,6 +8,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { CommentslistService } from './commentslist.service';
+import {Observable} from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-commentslist',
@@ -15,10 +17,11 @@ import { CommentslistService } from './commentslist.service';
   styleUrls: ['./commentslist.component.css']
 })
 export class CommentslistComponent implements OnInit {
-    @Input() comments: Comment[] = [ ];    
+    comments: Comment[] = [ ];    
     returnUrl: string;
+    sub;
     @Input() discussionid:number;
-    answeredtoid={};
+    //answeredtoid={};
   constructor(      private authenticationService: AuthenticationService,
         private route: ActivatedRoute,
         private router: Router,
@@ -35,30 +38,49 @@ export class CommentslistComponent implements OnInit {
     }
     
     private loadAllTheams() {
-        if(this.comments.length<1){
+
             this.commentslistService.getById(this.discussionid).subscribe(
                 comments => { this.comments=comments.comments;
-                            console.log("Comments:");
-                            console.log(this.comments);
-                            this.comments.forEach(item => {
+                            //console.log("Comments:");
+                            //console.log(this.comments);
+                            //this.comments.forEach(item => {
                                 //var obj = {};
                                 //var valObj = {};  
                                 //obj[item.id]=false;
-                                this.answeredtoid[item.id]=false;
-                            });
-                            console.log(this.answeredtoid);
+                                //this.answeredtoid[item.id]=false;
+                            //});
+                            //console.log(this.answeredtoid);
                 }
             );
-        }else{
-                            console.log("Comments set as parameter:");
-                            console.log(this.comments);
-        }
+        
+        this.sub = Observable.interval(10000).subscribe((val) => { 
+            this.commentslistService.getById(this.discussionid).subscribe(
+                comments => { this.comments=comments.comments;
+                            //console.log("Comments:");
+                            //console.log(this.comments);
+                            //this.comments.forEach(item => {
+                                //var obj = {};
+                                //var valObj = {};  
+                                //obj[item.id]=false;
+                                //this.answeredtoid[item.id]=false;
+                            //});
+                            //console.log(this.answeredtoid);
+                }
+            ); 
+        });
+
     }
+    
+    public get commentsList(){
+       //this.loadAllTheams();
+       return this.comments;  
+    }
+    
     
     public backtoSubList(){
         this.router.navigate([this.returnUrl]);        
     }  
-    
+/*    
     public doReplay(commentId:number){
         this.answeredtoid[commentId]=true;
         console.log(this.answeredtoid);
@@ -72,7 +94,7 @@ export class CommentslistComponent implements OnInit {
     isReplayed(commentId:number){
         return this.answeredtoid[commentId];
     }
-    
+*/    
     doLike(commentId:number){
         console.log("Comment like:" + commentId);
     }

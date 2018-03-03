@@ -36,6 +36,9 @@ import { TheamformService } from './theamform/theamform.service';
 import { CommentslistComponent } from './commentslist/commentslist.component';
 import { CommentsformComponent } from './commentsform/commentsform.component';
 import { CommentsformService } from './commentsform/commentsform.service';
+import { UserslistComponent } from './userslist/userslist.component';
+import { UserslistService } from './userslist/userslist.service';
+import { PaginationComponent } from './paggination/pagination.component';
 
 
 @NgModule({
@@ -53,7 +56,9 @@ import { CommentsformService } from './commentsform/commentsform.service';
     TheamfullviewComponent,
     TheamformComponent,
     CommentslistComponent,
-    CommentsformComponent
+    CommentsformComponent,
+    UserslistComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,7 @@ import { CommentsformService } from './commentsform/commentsform.service';
         TheamsCardsService,
         CommentslistService,
         CommentsformService,
+        UserslistService,
         UserService,
         {
             provide: HTTP_INTERCEPTORS,

@@ -15,12 +15,12 @@ export class LoginComponent implements OnInit {
   }
 
     public get isAuthenticated(){
-        console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+        //console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
         return this.authenticationService.isAuthenticated;
     }
     
     public get isNotAuthenticated(){
-        console.log("isNotAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+       // console.log("isNotAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
         return !this.authenticationService.isAuthenticated;
     }
     
@@ -30,6 +30,6 @@ export class LoginComponent implements OnInit {
     
     public logout(){
         this.authenticationService.logout();
-        console.log("logout:processed");
+       // console.log("logout:processed");
     }
 }
