@@ -43,8 +43,13 @@ export class TheamlistComponent implements OnInit {
 
 
     private loadAllTheams() {
-        console.log("id="+this.route.queryParams.getValue().id);
-        this.theamid=this.route.queryParams.getValue().id;
+        this.route.queryParams.filter(params => params.id).subscribe(
+           params => {
+             console.log(params); // {order: "popular"}
+
+             this.theamid = params.id;
+             console.log(this.theamid); // popular
+          });
         this.theamlistService.getById(this.theamid).subscribe(
             theams => { this.theams=theams;
                         console.log(this.theams);
