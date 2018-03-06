@@ -50,6 +50,7 @@ export class TheamlistComponent implements OnInit {
              this.theamid = params.id;
              console.log(this.theamid); // popular
           });
+
         this.theamlistService.getById(this.theamid).subscribe(
             theams => { this.theams=theams;
                         console.log(this.theams);
