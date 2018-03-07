@@ -15,7 +15,7 @@ import {MatListModule} from '@angular/material/list';
 export class UserslistComponent implements OnInit {
   users: User[] = [      ];    
     returnUrl: string;
-
+    selectedUser: User;
     
   constructor(        private route: ActivatedRoute,
         private router: Router,
@@ -42,5 +42,8 @@ export class UserslistComponent implements OnInit {
         );
     }
     
+    onSelect(user: User): void {
+      this.selectedUser = user;
+    }    
 
 }

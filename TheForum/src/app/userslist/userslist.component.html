@@ -2,8 +2,23 @@
    <h3 matSubheader>List of all registered users</h3>
    <mat-list-item *ngFor="let user of users">
       <mat-icon matListIcon [routerLink]="['/userdetailsform']" [queryParams]="user">person</mat-icon>
-      <li matLine id="{{user.id}}">{{user.firstname}},{{user.lastname}}, {{user.role}}</li>
+      <li matLine id="{{user.id}}" (click)="onSelect(user)" [class.selected]="user === selectedUser"><span class="users badge">{{user.id}}</span>{{user.firstname}}, {{user.lastname}}, {{user.role}}</li>
    </mat-list-item>
    
 
 </mat-list>
+<div *ngIf="selectedUser">
+<h2>{{ selectedUser.firstname | uppercase }} Details</h2>
+<div><span>id: </span>{{selectedUser.id}}</div>
+<div>
+  <label>First name:
+    <input [(ngModel)]="selectedUser.firstname" placeholder="First Name">
+  </label>
+  <label>Second name:
+    <input [(ngModel)]="selectedUser.lastname" placeholder="Last Name">
+  </label>
+  <label>Role:
+    <input [(ngModel)]="selectedUser.role" placeholder="Role">
+  </label>
+</div>
+</div>

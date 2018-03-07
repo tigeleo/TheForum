@@ -8,10 +8,10 @@ import * as myGlobals from '../_helpers/globals';
 @Injectable()
 export class UserslistService {
 
+    
   constructor(private http: HttpClient) { }
     getAll() {
         return this.http.get<User[]>(myGlobals.backendApiLinks.userslist);
     }
     
-
 }
