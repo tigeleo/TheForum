@@ -16,6 +16,8 @@ export class UserslistComponent implements OnInit {
   users: User[] = [      ];    
     returnUrl: string;
     selectedUser: User;
+    formTop: number;
+    formLeft: number;
     
   constructor(        private route: ActivatedRoute,
         private router: Router,
@@ -43,7 +45,16 @@ export class UserslistComponent implements OnInit {
     }
     
     onSelect(user: User): void {
-      this.selectedUser = user;
+        console.log(event.currentTarget);
+        let hel:Element=<Element>event.currentTarget;
+        this.formTop=hel.getBoundingClientRect().top;
+        this.formLeft=hel.getBoundingClientRect().left;
+      
+        console.log(this.formTop + " + " + this.formLeft);
+        this.selectedUser = user;
+    }    
+    updateUser(user: User): void {
+        this.selectedUser = user;
     }    
 
 }

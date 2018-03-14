@@ -7,18 +7,20 @@
    
 
 </mat-list>
-<div *ngIf="selectedUser">
+
+<div *ngIf="selectedUser" style="position: fixed;visibility: visible;z-index: 200;left:{{(formLeft | number:0)*1}}px;top:{{formTop}}px">
 <h2>{{ selectedUser.firstname | uppercase }} Details</h2>
 <div><span>id: </span>{{selectedUser.id}}</div>
 <div>
   <label>First name:
     <input [(ngModel)]="selectedUser.firstname" placeholder="First Name">
   </label>
-  <label>Second name:
+</div><div>  <label>Second name:
     <input [(ngModel)]="selectedUser.lastname" placeholder="Last Name">
   </label>
-  <label>Role:
+</div><div>  <label>Role:
     <input [(ngModel)]="selectedUser.role" placeholder="Role">
   </label>
 </div>
+<div><button (click)="updateUser(selectedUser)">Update</button></div>
 </div>

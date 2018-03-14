@@ -21,6 +21,7 @@ export const backendApiLinks = {
     commentslist_regexp: /\/api\/commentslist\/\d+$/,
     commentadd: API_BASE_NAME+'/api/comments/add',
     userslist:API_BASE_NAME+"/api/users/list",
+    userupdate:API_BASE_NAME+"/api/users/update",
     
 };
 

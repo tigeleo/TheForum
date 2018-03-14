@@ -70,3 +70,16 @@ li:hover {
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+
+
+.UserForm{
+	position: absolute; 
+	visibility: visible; 
+	z-index: 200;
+	height: 400px;
+	width: 300px;
+	background-color: #DDD;
+  	margin-right: .8em;
+  	border-radius: 4px 0 0 4px;	
+}

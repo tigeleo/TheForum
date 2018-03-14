@@ -13,5 +13,7 @@ export class UserslistService {
     getAll() {
         return this.http.get<User[]>(myGlobals.backendApiLinks.userslist);
     }
-    
+    updateUser(user: User){
+        return this.http.get<User[]>(myGlobals.backendApiLinks.userupdate);
+    }
 }
