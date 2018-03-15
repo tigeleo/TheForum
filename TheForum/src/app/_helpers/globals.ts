@@ -20,7 +20,8 @@ export const backendApiLinks = {
     commentslist: API_BASE_NAME+'/api/commentslist/',
     commentslist_regexp: /\/api\/commentslist\/\d+$/,
     commentadd: API_BASE_NAME+'/api/comments/add',
-    userslist:API_BASE_NAME+"/api/users/list",
+    userslist:API_BASE_NAME+"/api/users/list/all",
+    userslistpage:API_BASE_NAME+"/api/users/list/page",
     userupdate:API_BASE_NAME+"/api/users/update",
     
 };

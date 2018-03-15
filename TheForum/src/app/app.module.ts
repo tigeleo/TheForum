@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
@@ -62,6 +64,7 @@ import { PaginationComponent } from './paggination/pagination.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     MatCardModule,
@@ -70,6 +73,7 @@ import { PaginationComponent } from './paggination/pagination.component';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
+    MatPaginatorModule,
     routing
   ],
   providers: [

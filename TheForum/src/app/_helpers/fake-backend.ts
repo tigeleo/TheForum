@@ -68,6 +68,21 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return Observable.of(new HttpResponse({ status: 200, body: users }));
             }
              
+            // get discussion list
+            if (request.url.endsWith(myGlobals.backendApiLinks.userslistpage) && request.method === 'POST') {
+                let userPageDef=request.body;
+                let users=myData.DATA_USERS;
+                
+                let funct=function(user,index){
+                    //console.log(user + " -- " + index + " -- " +  userPageDef.pageIndex + " -- " + (userPageDef.pageIndex+1)*userPageDef.pageSize);
+                    return userPageDef.pageIndex*userPageDef.pageSize <= index && index < (userPageDef.pageIndex+1)*userPageDef.pageSize;
+                };
+                
+                let userslist = users.filter(funct);  
+ 
+                return Observable.of(new HttpResponse({ status: 200, body: userslist }));
+            }
+             
             // add new discussion
             if (request.url.endsWith(myGlobals.backendApiLinks.theamadd) && request.method === 'POST') {
                 

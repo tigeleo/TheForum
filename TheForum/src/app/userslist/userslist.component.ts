@@ -19,6 +19,8 @@ export class UserslistComponent implements OnInit {
     formTop: number;
     formLeft: number;
     
+    userPage={pageIndex: 0, pageSize: 10, length: 100};
+    
   constructor(        private route: ActivatedRoute,
         private router: Router,
         private userslistService: UserslistService,
@@ -27,7 +29,7 @@ export class UserslistComponent implements OnInit {
   }
 
     ngOnInit() {
-        this.loadAllTheams();
+        this.loadUsersPage();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
@@ -36,6 +38,17 @@ export class UserslistComponent implements OnInit {
     private loadAllTheams() {
  
         this.userslistService.getAll().subscribe(
+            users => { this.users=users;
+                        console.log(this.users);
+                
+
+            }
+        );
+    }
+    
+    
+    private loadUsersPage(){
+        this.userslistService.getUsersPage(this.userPage).subscribe(
             users => { this.users=users;
                         console.log(this.users);
                 
@@ -55,6 +68,31 @@ export class UserslistComponent implements OnInit {
     }    
     updateUser(user: User): void {
         this.selectedUser = user;
+    }  
+    
+    
+    public getServerData(event?:PageEvent){
+        console.log(event);
+        this.userPage=event;
+        this.loadUsersPage();
+        /*
+      this.fooService.getdata(event).subscribe(
+        response =>{
+          if(response.error) {
+            // handle error
+          } else {
+            this.datasource = response.data;
+            this.pageIndex = response.pageIndex;
+            this.pageSize = response.pageSize;
+            this.length = response.length;
+          }
+        },
+        error =>{
+          // handle error
+        }
+      );
+        */
+      return event;
     }    
 
 }

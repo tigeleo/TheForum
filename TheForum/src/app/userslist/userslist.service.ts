@@ -16,4 +16,8 @@ export class UserslistService {
     updateUser(user: User){
         return this.http.get<User[]>(myGlobals.backendApiLinks.userupdate);
     }
+    
+    getUsersPage(userPageDef){
+        return this.http.post<User[]>(myGlobals.backendApiLinks.userslistpage,userPageDef);
+    }
 }
