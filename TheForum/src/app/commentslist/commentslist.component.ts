@@ -79,7 +79,7 @@ export class CommentslistComponent implements OnInit {
     
     public get commentsExists(){
        //this.loadAllTheams();
-        if(this.comments && this.comments.lenght>0){
+        if(this.comments && this.comments.length>0){
             return true;
         }else{
             return false;
