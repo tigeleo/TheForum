@@ -28,7 +28,7 @@ export class TheamfullviewComponent implements OnInit {
         this.theam = {id:id,title:title, body:body};    
         console.log(t);
       });
-*/
+*/debugger;
        this.activatedRoute.queryParams.subscribe((params: Params) => {
         let id = params["id"];
         let title = params["title"];

@@ -1,4 +1,4 @@
-<mat-list>
+<mat-list *ngIf="commentsExists">
    <div style="margin-left: 40px;border-size:1px">
    <mat-list-item *ngFor="let comment of commentsList">  
 <article id="{{comment.id}}" class="_2lpCC forum-content-medium-font forum-text-color forum-card-background-color forum-card-border-color comment" data-hook="comment" style="border-width: 1px;">

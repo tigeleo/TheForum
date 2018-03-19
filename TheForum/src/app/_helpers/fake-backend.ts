@@ -97,6 +97,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 let filteredtheamlist = theamlist.filter(theam => {
                     return theam.theamid == theamid;
                 });  
+                
+                // get max id
+                let maxid=0;
+                myData.DATA_DISCUTIONS.discussions.forEach(e=>{e.theams.forEach(d=>{if(maxid<d.id){maxid=d.id;}})});  
+                
+                discussion.theam.id=++maxid;
+                
                  console.log(filteredtheamlist);
                filteredtheamlist[0].theams=filteredtheamlist[0].theams.concat(discussion.theam);
                 
@@ -124,6 +131,21 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                filteredComments[0].comments=filteredComments[0].comments.concat({"id":comment.id,"author":comment.author,     "body":comment.body });
                 
                 return Observable.of(new HttpResponse({ status: 200, body: filteredComments[0] }));
+            }
+            
+           // add new theam
+            if (request.url.endsWith(myGlobals.backendApiLinks.theamslist_add) && request.method === 'POST') {
+                
+                let theam=request.body;
+                
+                let theamlist =myData.DATA_THEAMS;
+                let theamid=theamlist[theamlist.length-1].id;
+                theamid++;
+                theam.id=theamid;
+                theamlist=theamlist.concat(theam);
+                myData.DATA_DISCUTIONS.discussions=myData.DATA_DISCUTIONS.discussions.concat({   theamid:theamid,  theams:[]}); 
+                
+                return Observable.of(new HttpResponse({ status: 200, body: theamlist }));
             }
            
             // get users
@@ -159,6 +181,28 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return Observable.throw('No theams found.');
                 }
             }
+            
+            // get theamslist_delete 
+            if (request.url.match(myGlobals.backendApiLinks.theamslist_delete) && request.method === 'GET') {
+                // find user by id in users array
+                let urlParts = request.url.split('/');
+                let theamid = parseInt(urlParts[urlParts.length - 1]);               
+                
+                let theamlist = myData.DATA_THEAMS;
+                
+                let filteredtheamlist = theamlist.filter(theam => {
+                    return theam.id != theamid;
+                });                
+                myData.DATA_THEAMS  = filteredtheamlist;
+                
+                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                if (filteredtheamlist) {
+                    return Observable.of(new HttpResponse({ status: 200, body: filteredtheamlist }));
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return Observable.throw('No theams found.');
+                }
+            }
 
             // get comments list
             if (request.url.match(myGlobals.backendApiLinks.commentslist_regexp) && request.method === 'GET') {
@@ -173,7 +217,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     });
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
-                if (filteredComments) {
+                if (filteredComments && filteredComments.length>0) {
                      let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.author,body:c.body,answeredid:-1};});
                    console.log("arrayComments:");
                    console.log(filteredComments[0]);
@@ -182,7 +226,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return Observable.of(new HttpResponse({ status: 200, body: {comments:arrayComments} }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return Observable.throw('No comment found.');
+                    return Observable.of(new HttpResponse({ status: 200, body: {comments:[]} }));
                 }
             }            
             

@@ -40,22 +40,23 @@ export class CommentslistComponent implements OnInit {
     private loadAllTheams() {
 
             this.commentslistService.getById(this.discussionid).subscribe(
-                comments => { this.comments=comments.comments;
-                            //console.log("Comments:");
-                            //console.log(this.comments);
-                            //this.comments.forEach(item => {
-                                //var obj = {};
-                                //var valObj = {};  
-                                //obj[item.id]=false;
-                                //this.answeredtoid[item.id]=false;
-                            //});
-                            //console.log(this.answeredtoid);
+                comments => {                     
+                     if( comments && comments.length>0 ) {
+                        this.comments=comments.comments;
+                    }else{
+                         this.comments= [ ];
+                   }                
                 }
             );
         
         this.sub = Observable.interval(10000).subscribe((val) => { 
             this.commentslistService.getById(this.discussionid).subscribe(
-                comments => { this.comments=comments.comments;
+                comments => {
+                    if( comments && comments.length>0 ) {
+                        this.comments=comments.comments;
+                    }else{
+                         this.comments= [ ];
+                   }
                             //console.log("Comments:");
                             //console.log(this.comments);
                             //this.comments.forEach(item => {
@@ -76,7 +77,15 @@ export class CommentslistComponent implements OnInit {
        return this.comments;  
     }
     
-    
+    public get commentsExists(){
+       //this.loadAllTheams();
+        if(this.comments && this.comments.lenght>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+        
     public backtoSubList(){
         this.router.navigate([this.returnUrl]);        
     }  

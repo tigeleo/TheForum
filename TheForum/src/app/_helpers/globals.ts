@@ -15,6 +15,8 @@ export const backendApiLinks = {
     users: API_BASE_NAME+"/api/users",
     users_regexp: /\/api\/users\/\d+$/,
     theamslist: API_BASE_NAME+'/api/theamslist/',
+    theamslist_delete: API_BASE_NAME+'/api/theamslist/delete/',
+    theamslist_add: API_BASE_NAME+'/api/theamslist/add/',
     theamadd: API_BASE_NAME+'/api/theams/add',
     theamslist_regexp: /\/api\/theamslist\/\d+$/,
     commentslist: API_BASE_NAME+'/api/commentslist/',

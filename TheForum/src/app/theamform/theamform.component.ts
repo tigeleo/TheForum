@@ -23,7 +23,7 @@ export class TheamformComponent implements OnInit {
 
   ngOnInit() {
         // get return url from route parameters or default to '/'
-        this.returnUrl = '/theamslist?id='+this.theamid;
+        this.returnUrl = '/theamslist';
 
   }
     
@@ -32,12 +32,14 @@ export class TheamformComponent implements OnInit {
 
     createNewDiscution() {
         this.loading = true;
+        //debugger;
         this.theamformService.createNewDiscusion({theamid:this.theamid, theam: this.model})
             .subscribe(
                 data => {
                     console.log(data);
+                    console.log(this.theamid);
                     this.loading = false;
-                    this.router.navigate([this.returnUrl]);
+                    this.router.navigate([this.returnUrl], { queryParams: {id:this.theamid} });
                    
                 },
                 error => {

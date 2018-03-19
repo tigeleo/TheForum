@@ -13,5 +13,16 @@ export class TheamsCardsService {
         return this.http.get<TheamCard[]>(myGlobals.backendApiLinks.theamslist);
     }
     
+    deleteTheam(theamid) {
+        return this.http.get<TheamCard[]>(myGlobals.backendApiLinks.theamslist_delete+theamid);
+    }
+    
+    createNewTheam(theamcard: TheamCard) {
+        return this.http.post<any>(myGlobals.backendApiLinks.theamslist_add, theamcard)
+            .map(theam => {
 
+                return theam;
+            });    
+    }
+    
 }
