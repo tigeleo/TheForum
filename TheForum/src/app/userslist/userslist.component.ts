@@ -70,8 +70,8 @@ export class UserslistComponent implements OnInit {
         this.selectedUser = user;
     }  
     
-    
-    public getServerData(event?:PageEvent){
+    // ?:PageEvent
+    public getServerData(event){
         console.log(event);
         this.userPage=event;
         this.loadUsersPage();
