@@ -12,6 +12,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
@@ -37,6 +39,7 @@ import { TheamformComponent } from './theamform/theamform.component';
 import { TheamformService } from './theamform/theamform.service';
 import { CommentslistComponent } from './commentslist/commentslist.component';
 import { CommentsformComponent } from './commentsform/commentsform.component';
+import { UserformComponent } from './userform/userform.component';
 import { CommentsformService } from './commentsform/commentsform.service';
 import { UserslistComponent } from './userslist/userslist.component';
 import { UserslistService } from './userslist/userslist.service';
@@ -60,6 +63,7 @@ import { PaginationComponent } from './paggination/pagination.component';
     CommentslistComponent,
     CommentsformComponent,
     UserslistComponent,
+    UserformComponent,
     PaginationComponent
   ],
   imports: [
@@ -74,6 +78,7 @@ import { PaginationComponent } from './paggination/pagination.component';
     MatListModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatDialogModule,
     routing
   ],
   providers: [
@@ -86,6 +91,14 @@ import { PaginationComponent } from './paggination/pagination.component';
         CommentslistService,
         CommentsformService,
         UserslistService,
+        {
+            provide: MatDialogRef,
+            useValue: {}
+          }, 
+          {
+            provide: MAT_DIALOG_DATA,
+            useValue: {} // Add any data you wish to test if it is passed/used correctly
+          },
         UserService,
         {
             provide: HTTP_INTERCEPTORS,
@@ -96,6 +109,7 @@ import { PaginationComponent } from './paggination/pagination.component';
         // provider used to create fake backend
         fakeBackendProvider
   ],
+  entryComponents:[UserformComponent,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
