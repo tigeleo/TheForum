@@ -39,7 +39,7 @@ import { TheamformComponent } from './theamform/theamform.component';
 import { TheamformService } from './theamform/theamform.service';
 import { CommentslistComponent } from './commentslist/commentslist.component';
 import { CommentsformComponent } from './commentsform/commentsform.component';
-import { UserformComponent } from './userform/userform.component';
+//import { UserformComponent } from './userform/userform.component';
 import { CommentsformService } from './commentsform/commentsform.service';
 import { UserslistComponent } from './userslist/userslist.component';
 import { UserslistService } from './userslist/userslist.service';
@@ -63,7 +63,7 @@ import { PaginationComponent } from './paggination/pagination.component';
     CommentslistComponent,
     CommentsformComponent,
     UserslistComponent,
-    UserformComponent,
+//    UserformComponent,
     PaginationComponent
   ],
   imports: [
@@ -107,9 +107,9 @@ import { PaginationComponent } from './paggination/pagination.component';
         },
 
         // provider used to create fake backend
-        fakeBackendProvider
+        //fakeBackendProvider
   ],
-  entryComponents:[UserformComponent,],
+  //entryComponents:[UserformComponent,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

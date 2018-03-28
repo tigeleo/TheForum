@@ -7,7 +7,7 @@ import { UserslistService } from './userslist.service';
 import { User } from '../_models/index';
 import {MatListModule} from '@angular/material/list';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { UserformComponent } from '../userform/userform.component';
+//import { UserformComponent } from '../userform/userform.component';
 
 @Component({
   selector: 'app-userslist',
@@ -62,14 +62,14 @@ export class UserslistComponent implements OnInit {
     
     onSelect(user: User): void {
         
-        let dialogRef = this.dialog.open(UserformComponent, {
-            width: '250px',
-            data: user
-          });
-        dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
-            this.selectedUser = result;
-          });
+//        let dialogRef = this.dialog.open(UserformComponent, {
+//            width: '250px',
+//            data: user
+//          });
+//        dialogRef.afterClosed().subscribe(result => {
+//            console.log('The dialog was closed');
+//            this.selectedUser = result;
+//          });
         
         /*
         console.log(event.currentTarget);

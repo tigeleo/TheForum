@@ -193,7 +193,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 let filteredtheamlist = theamlist.filter(theam => {
                     return theam.id != theamid;
                 });                
-                myData.DATA_THEAMS  = filteredtheamlist;
+                //myData.DATA_THEAMS  = filteredtheamlist;
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 if (filteredtheamlist) {
