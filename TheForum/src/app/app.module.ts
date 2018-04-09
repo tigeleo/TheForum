@@ -39,12 +39,13 @@ import { TheamformComponent } from './theamform/theamform.component';
 import { TheamformService } from './theamform/theamform.service';
 import { CommentslistComponent } from './commentslist/commentslist.component';
 import { CommentsformComponent } from './commentsform/commentsform.component';
-//import { UserformComponent } from './userform/userform.component';
+import { UserformComponent } from './userform/userform.component';
 import { CommentsformService } from './commentsform/commentsform.service';
 import { UserslistComponent } from './userslist/userslist.component';
 import { UserslistService } from './userslist/userslist.service';
 import { PaginationComponent } from './paggination/pagination.component';
-
+import { UsermessagesService } from './usermessages/usermessages.service';
+import { UsermessagesComponent } from './usermessages/usermessages.component';
 
 @NgModule({
   declarations: [
@@ -63,8 +64,9 @@ import { PaginationComponent } from './paggination/pagination.component';
     CommentslistComponent,
     CommentsformComponent,
     UserslistComponent,
-//    UserformComponent,
-    PaginationComponent
+    UserformComponent,
+    PaginationComponent,
+    UsermessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -105,11 +107,16 @@ import { PaginationComponent } from './paggination/pagination.component';
             useClass: JwtInterceptor,
             multi: true
         },
-
+        UsermessagesService,       
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JwtInterceptor,
+            multi: true
+        },
         // provider used to create fake backend
         //fakeBackendProvider
   ],
-  //entryComponents:[UserformComponent,],
+  entryComponents:[UserformComponent,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

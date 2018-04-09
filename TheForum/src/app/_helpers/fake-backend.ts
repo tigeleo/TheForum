@@ -53,7 +53,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // get discussion list
             if (request.url.endsWith(myGlobals.backendApiLinks.theamslist) && request.method === 'GET') {
                 
-                let theams=myData.DATA_THEAMS;
+                let theams = myData.DATA_THEAMS;
 
  
                 return Observable.of(new HttpResponse({ status: 200, body: theams }));
