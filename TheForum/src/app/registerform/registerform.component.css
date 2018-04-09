@@ -1,77 +1,102 @@
-
-.col-md-6{
-    width: 800px;
-    margin: auto;
-    background: transparent;
-    color: #2F2E2E;
-    font-family: Helvetica;
-	
+.col-md-6 {
+	width: 800px;
+	margin: auto;
+	background: transparent;
+	color: #2F2E2E;
+	font-family: Helvetica;
 }
 
-.form-group{
-    width: 100%;
-    /*text-align: center;*/
+.form-group {
+	width: 100%;
+	/*text-align: center;*/
 	font-size: 1em;
 }
 
-.InnerInputLabel{
+.InnerInputLabel {
 	display: none;
 }
 
-
-.form-control{
+.form-control {
 	height: 48px;
-    font-size: 14px;
-    font-family: Helvetica;
-    font-weight: 300;
-    color: #2F2E2E;
-    line-height: 14px;
-    text-align: left;
-    padding: 0 12px;
-    width: 50%;
+	font-size: 14px;
+	font-family: Helvetica;
+	font-weight: 300;
+	color: #2F2E2E;
+	line-height: 14px;
+	text-align: left;
+	padding: 0 12px;
+	width: 50%;
 }
 
-
-.s_ucNUmemberLoginDialogSkinNewsubmitButton, .s_ucNUmemberLoginDialogSkinNewokButton {
-    height: 44px;
-    width: 25%;
-    border: 0;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 44px;
-    padding: 0;
+.s_ucNUmemberLoginDialogSkinNewsubmitButton,
+	.s_ucNUmemberLoginDialogSkinNewokButton {
+	height: 44px;
+	width: 25%;
+	border: 0;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 44px;
+	padding: 0;
 }
 
-
-.b1[data-state~="shouldUseFlex"][data-state~="center"] .b1link, .b1[data-state~="shouldUseFlex"][data-state~="center"] .b1labelwrapper {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+.b1[data-state~="shouldUseFlex"][data-state~="center"] .b1link, .b1[data-state~="shouldUseFlex"][data-state~="center"] .b1labelwrapper
+	{
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
-
 
 .b1[data-disabled="false"] .b1link {
-    background-color: rgba(114, 114, 114, 1);
-    border: solid rgba(96, 94, 94, 1) 0px;
-    cursor: pointer !important;
+	/*     background-color: rgba(114, 114, 114, 1); */
+	/*     border: solid rgba(96, 94, 94, 1) 0px; */
+	cursor: pointer !important;
 }
 
-.b1[data-state~="shouldUseFlex"] .b1link, .b1[data-state~="shouldUseFlex"] .b1labelwrapper {
-    text-align: initial;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+.b1[data-state~="shouldUseFlex"] .b1link, .b1[data-state~="shouldUseFlex"] .b1labelwrapper
+	{
+	text-align: initial;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
 }
 
 .b1link {
-    border-radius: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+	border-radius: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
+
+.form-group button {
+	background-color: gray !important;
+	border: 2px solid;
+	border-radius: 5px;
+	color: white;
+	padding: 7px 10px;
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
+	height: 36px;
+	margin: 10px 0 5px 0;
+}
+
+form div.form-group {
+	
+}
+
+form div.form-group  input {
+	border: 1px solid;
+	border-radius: 5px;
+	margin-top: 15px;
+}
+
+form div.form-group .help-block {
+	color: red;
+	font-weight: bold;
 }

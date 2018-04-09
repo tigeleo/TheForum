@@ -48,7 +48,6 @@ mat-card:not([class*=mat-elevation-z]) {
     color: white;
     padding: 7px 10px;
     text-align: center;
-/*     font-weight: bold; */
     display: inline-block;
     font-size: 15px;
     height: 36px;
