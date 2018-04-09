@@ -36,3 +36,29 @@ h3 {
     -webkit-margin-end: 0px;
     font-weight: bold;
 }
+
+mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 1px 12px 2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#memberLoginDialogokButton {
+    background-color: gray !important;
+    border: 2px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+/*     font-weight: bold; */
+    display: inline-block;
+    font-size: 15px;
+    height: 36px;
+    margin-left: 15px;
+}
+
+
+.mat-card-content  .form-group{
+	margin-bottom: 15px;
+}
+.mat-card-content .form-group lable{
+	margin-bottom: 5px;
+}
