@@ -1,7 +1,8 @@
 .hold-right {
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: 5px;
+    padding:5px;
+    right: 10px;    
 }
 ._2ftM2._3Hath {
     border-style: solid;
@@ -28,6 +29,7 @@
     color: #27a456;
 }
 
-
-
-
+.button-border-radius{
+		border: 2px solid;
+	    border-radius: 5px;
+}

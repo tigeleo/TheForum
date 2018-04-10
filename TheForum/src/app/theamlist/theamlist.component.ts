@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../_services/index';
 
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { AuthenticationService } from '../_services/index';
 import { TheamlistService } from './theamlist.service';
 import { Theam } from '../_models/index';
 import {MatListModule} from '@angular/material/list';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { TheamfullviewComponent } from '../theamfullview/theamfullview.component';
 import { TheamformComponent } from '../theamform/theamform.component';
 
@@ -28,13 +29,15 @@ export class TheamlistComponent implements OnInit {
     returnUrl: string;
     theamid:number;
     
-  constructor(        private route: ActivatedRoute,
+  constructor(        private authenticationService: AuthenticationService,
+        private route: ActivatedRoute,
         private router: Router,
         private theamlistService: TheamlistService,
-        private alertService: AlertService) {
+        private alertService: AlertService,
+        public dialog: MatDialog) {
         
   }
-
+ 
     ngOnInit() {
         this.loadAllTheams();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -67,5 +70,41 @@ export class TheamlistComponent implements OnInit {
     public backtoSubList(){
         this.router.navigate([this.returnUrl]);        
     }
-
+    
+    createTheam(theamid): void {
+        
+        let dialogRef = this.dialog.open(TheamformComponent, {
+            width: '250px',
+            data: theamid
+          });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed with ' + result);
+            if(result) {
+                this.theams=this.theams.concat(result.data);
+            }
+        });
+        
+        /*
+        console.log(event.currentTarget);
+        let hel:Element=<Element>event.currentTarget;
+        this.formTop=hel.getBoundingClientRect().top;
+        this.formLeft=hel.getBoundingClientRect().left;
+      
+        console.log(this.formTop + " + " + this.formLeft);
+        this.selectedUser = user;
+        */
+    }      
+    public get isAuthenticated(){
+        //console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+        return this.authenticationService.isAuthenticated;
+    }
+    
+    public get isNotAuthenticated(){
+       // console.log("isNotAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+        return !this.authenticationService.isAuthenticated;
+    }
+    
+    public get currectUser(){
+        return this.authenticationService.currentUser;
+    }
 }

@@ -44,7 +44,8 @@ import { CommentsformService } from './commentsform/commentsform.service';
 import { UserslistComponent } from './userslist/userslist.component';
 import { UserslistService } from './userslist/userslist.service';
 import { PaginationComponent } from './paggination/pagination.component';
-
+import { UsermessagesService } from './usermessages/usermessages.service';
+import { UsermessagesComponent } from './usermessages/usermessages.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PaginationComponent } from './paggination/pagination.component';
     CommentsformComponent,
     UserslistComponent,
     UserformComponent,
-    PaginationComponent
+    PaginationComponent,
+    UsermessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +107,7 @@ import { PaginationComponent } from './paggination/pagination.component';
             useClass: JwtInterceptor,
             multi: true
         },
-
+        UsermessagesService,       
         // provider used to create fake backend
         fakeBackendProvider
   ],

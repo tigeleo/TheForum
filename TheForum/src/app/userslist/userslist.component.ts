@@ -65,10 +65,12 @@ export class UserslistComponent implements OnInit {
         let dialogRef = this.dialog.open(UserformComponent, {
             width: '250px',
             data: user
+
           });
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed');
             this.selectedUser = result;
+
           });
         
         /*

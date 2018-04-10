@@ -31,18 +31,24 @@ export class CommentslistComponent implements OnInit {
   ngOnInit() {
         this.loadAllTheams();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+
       
   }
     public get isAuthenticated(){
         return this.authenticationService.isAuthenticated;
     }
+
     
     private loadAllTheams() {
 
             this.commentslistService.getById(this.discussionid).subscribe(
                 comments => {                     
                      if( comments && comments.length>0 ) {
-                        this.comments=comments.comments;
+                        this.comments=comments;
+
+
+
                     }else{
                          this.comments= [ ];
                    }                
@@ -53,7 +59,12 @@ export class CommentslistComponent implements OnInit {
             this.commentslistService.getById(this.discussionid).subscribe(
                 comments => {
                     if( comments && comments.length>0 ) {
-                        this.comments=comments.comments;
+                        this.comments=comments;
+
+
+
+
+
                     }else{
                          this.comments= [ ];
                    }
@@ -64,13 +75,16 @@ export class CommentslistComponent implements OnInit {
                                 //var valObj = {};  
                                 //obj[item.id]=false;
                                 //this.answeredtoid[item.id]=false;
+
                             //});
                             //console.log(this.answeredtoid);
                 }
+
             ); 
         });
 
     }
+
     
     public get commentsList(){
        //this.loadAllTheams();
@@ -85,6 +99,20 @@ export class CommentslistComponent implements OnInit {
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
     public backtoSubList(){
         this.router.navigate([this.returnUrl]);        

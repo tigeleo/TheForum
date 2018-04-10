@@ -107,7 +107,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                  console.log(filteredtheamlist);
                filteredtheamlist[0].theams=filteredtheamlist[0].theams.concat(discussion.theam);
                 
-                return Observable.of(new HttpResponse({ status: 200, body: discussion }));
+                return Observable.of(new HttpResponse({ status: 200, body: discussion.theam }));
             }
            
             // add new comment

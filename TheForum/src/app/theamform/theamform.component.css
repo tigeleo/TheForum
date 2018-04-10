@@ -1,20 +1,69 @@
 .example-container {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
-.example-container > * {
-  width: 100%;
+.example-container>* {
+	width: 100%;
 }
 
 .example-container form {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
-.example-container form > * {
-  margin: 5px 0;
+.example-container form>* {
+	margin: 5px 0;
 }
 
 .example-container .mat-radio-button {
-  margin: 0 5px;
+	margin: 0 5px;
+}
+
+.InnerInputLabel {
+	display: none;
+}
+
+.form-group button {
+	background-color: gray !important;
+	border: 1px solid;
+	border-radius: 2px;
+	color: white;
+	padding: 7px 10px;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+/* 	height: 35px; */
+	margin: 10px 0 5px 0;
+	/* 	width: 145px; */
+}
+
+form div.form-group {
+	
+}
+
+form div.form-group  lable {
+	display: block;
+}
+
+form div.form-group  input {
+	border: 1px solid grey;
+	border-radius: 2px;
+	margin-top: 5px;
+	display: block;
+	height: 20px;
+	padding-left:3px;
+}
+
+form div.form-group  textarea {
+	border: 1px solid grey;
+	border-radius: 2px;
+	margin-top: 5px;
+	display: block;
+	height: 40px;
+	padding-left:3px;
+}
+
+form div.form-group .help-block {
+	color: red;
+	font-weight: bold;
 }

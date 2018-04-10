@@ -1,7 +1,7 @@
 mat-card-title {
   color: white;
-  background-color: blue;
-  font-size:20px;
+  background-color: gray;
+  font-size:20px !important;
 }
 
 mat-card {

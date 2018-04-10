@@ -1,6 +1,6 @@
-<app-theamform [theamid]="theamid"></app-theamform>
-<mat-list>
-   <!-- h3 matSubheader>List of discussions{{theamid}}</h3-->
+
+<app-theamform *ngIf="isAuthenticated && false" [theamid]="theamid"></app-theamform>
+<!-- mat-list>
    <mat-list-item *ngFor="let theam of theams" >
    	<div matLine [routerLink]="['/theamfullview']" [queryParams]="theam">
       <mat-icon matListIcon >face</mat-icon>
@@ -20,7 +20,7 @@
    </mat-list-item>
    
 
-</mat-list>
+</mat-list-->
 
 
 
@@ -37,14 +37,14 @@
 <div class="">
 <div>
 <div class="_2CiWW ieH3H" data-hook="post-list" style="position: relative; height: 1152.2px;">
-<div class="_2tyB_" >
+<div *ngIf="isAuthenticated" class="_2tyB_" >
 <div>
 <div class="_386T_ forum-content-medium-font button-background-color button-primary-text-color create-post undefined" tabindex="0" data-hook="create-post" role="button" aria-labelledby="create-post-label">
 <span class="nFerz avatar-image">
 <div class="_1Fm4K fluid-avatar-image">
 </div>
 </span>
-<span id="create-post-label" class="_2S-XM">Создать пост</span>
+<span id="create-post-label" (click)="createTheam(theamid)" class="_2S-XM">Создать пост</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.969" viewBox="0 0 16 15.969" class="MufoH button-primary-icon-fill" style="fill-rule: evenodd;">
 <path d="M847.669,535.445l-1.553,1.546L843,533.87l1.553-1.546a1.1,1.1,0,0,1,1.561,0l1.56,1.561A1.1,1.1,0,0,1,847.669,535.445ZM835,548h-3v-3l10-10,3,3Z" transform="translate(-832 -532.031)">
 </path>
@@ -55,18 +55,18 @@
 </div>
 
 <div *ngFor="let theam of theams; let i = index" class="_2tyB_ post-list__post-list-item" id="5a591fbdd9ad210014bf7815_{{i}}" data-hook="post-list-item" >
-<a target="_top" href="https://tigeleo.wixsite.com/theforum/forum/kak-rabotat-s-forumom/chto-takoe-wix-forum" class="_1HZQ5 _2MwUY forum-content-medium-font forum-text-color forum-card-background-color forum-card-border-color post-list-item" role="article" data-hook="post-list-item" style="border-width: 1px;">
+<a target="_top"  [routerLink]="['/theamfullview']" [queryParams]="theam" class="_1HZQ5 _2MwUY forum-content-medium-font forum-text-color forum-card-background-color forum-card-border-color post-list-item" role="article" data-hook="post-list-item" style="border-width: 1px;">
 <div class="_3xbLk _1EB0G post-header">
 <object type="communities/link">
 <div>
-<a href="https://tigeleo.wixsite.com/theforum/members/admin" target="_top">
+<!-- a href="https://tigeleo.wixsite.com/theforum/members/admin" target="_top"-->
 <div class="_2NZd5 forum-text-color avatar">
 <span class="nFerz avatar-image">
 <div class="_1Fm4K fluid-avatar-image">
 </div>
 </span>
-<span class="_2F9CD" data-hook="avatar__name">Admin</span>
-<div class="_2GgmO badge" data-hook="badge">
+<span class="_2F9CD" data-hook="avatar__name">{{theam.author}}</span>
+<div class="_2GgmO badge" data-hook="badge" *ngIf="theam.author_role=='Admin'">
 <svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" class="_2eWEl forum-icon-fill" style="fill-rule: evenodd;">
 <path d="M15.3812,6.495914 L12.6789333,8.77258837 C12.6191333,8.84477644 12.5099333,8.85722265 12.4354,8.79997005 C12.4215333,8.79001308 12.4094,8.77756686 12.3998667,8.76429089 L9.78686667,6.14327115 C9.67766667,5.99225704 9.46186667,5.95491839 9.305,6.05863687 C9.26946667,6.08186981 9.23913333,6.11091099 9.21573333,6.14493065 L6.60013333,8.81075677 C6.5464,8.88626383 6.43893333,8.90534803 6.3592,8.85390366 C6.34446667,8.84394669 6.33146667,8.83233022 6.32106667,8.81905425 L3.61966667,6.50587098 C3.5018,6.36149485 3.28426667,6.33577266 3.13346667,6.44861837 C3.0494,6.51167921 3,6.60792997 3,6.70998895 L4,14 L15,14 L16,6.70169148 C16,6.51831719 15.8448667,6.36979232 15.6533333,6.36979232 C15.5476,6.36979232 15.4470667,6.41625821 15.3812,6.495914 Z">
 </path>
@@ -74,12 +74,12 @@
 <!-- react-empty: 567 -->
 </div>
 </div>
-</a>
+<!-- /a -->
 </div>
 </object>
 <span class="_27HWd">
 <div class="_12I_f">
-<span class="time-ago" data-hook="time-ago">янв. 12</span>
+<span class="time-ago" data-hook="time-ago">{{theam.created}}</span>
 </div>
 </span>
 <span class="_2mwEI">
@@ -105,7 +105,7 @@
 </div>
 <h2 class="_1dN_D _1qN9A forum-title-medium-font forum-text-color post-title" data-hook="post-title" tabindex="0">
 <object type="communities/link">
-<a target="_top" href="https://tigeleo.wixsite.com/theforum/forum/kak-rabotat-s-forumom/chto-takoe-wix-forum" style="color: inherit;">{{theam.title}}</a>
+<a target="_top"  [routerLink]="['/theamfullview']" [queryParams]="theam" style="color: inherit;">{{theam.title}}</a>
 </object>
 </h2>
 <div class="_3PoZM">
@@ -119,9 +119,9 @@
 <div class="O2IaJ _2HCgl forum-separator-background-color">
 </div>
 <div class="r9wh-">
-<div class="_1fiuR post-list-item__view-count" data-hook="post-list-item__view-count">Просмотров: 2</div>
+<div class="_1fiuR post-list-item__view-count" data-hook="post-list-item__view-count">Просмотров: {{theam.watchers}}</div>
 <object type="communities/link">
-<a target="_top" href="https://tigeleo.wixsite.com/theforum/forum/kak-rabotat-s-forumom/chto-takoe-wix-forum" class="_2d4Ep forum-text-color" data-hook="post-list-item__comment-count">Комментариев: 0</a>
+<a target="_top"  [routerLink]="['/theamfullview']" [queryParams]="theam" class="_2d4Ep forum-text-color" data-hook="post-list-item__comment-count">Комментариев: {{theam.comments}}</a>
 </object>
 <button class="_2FJRg" aria-live="assertive" data-hook="post-list-item__like-button">
 <span class="M4S_g forum-text-color" data-hook="post-list-item__like-count">0</span>
