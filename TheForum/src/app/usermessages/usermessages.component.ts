@@ -55,7 +55,7 @@ export class UsermessagesComponent implements OnInit {
         this.usermessagesService.createNewMassage(this.model)
             .subscribe(
             data => {
-                console.log(data);
+                console.log(data); 
                 //                    this.theams=data;
                 //                    this.loading = false;
                 //this.router.rnUrl]);
