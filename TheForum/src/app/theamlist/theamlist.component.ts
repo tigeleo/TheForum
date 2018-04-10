@@ -85,7 +85,7 @@ export class TheamlistComponent implements OnInit {
         });
         
         /*
-        console.log(event.currentTarget);
+        console.log(event.currentTarget); 
         let hel:Element=<Element>event.currentTarget;
         this.formTop=hel.getBoundingClientRect().top;
         this.formLeft=hel.getBoundingClientRect().left;
