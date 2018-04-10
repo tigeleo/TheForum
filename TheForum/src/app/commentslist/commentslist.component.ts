@@ -53,6 +53,9 @@ export class CommentslistComponent implements OnInit {
                          this.comments= [ ];
                    }                
                 }
+
+
+
             );
         
         this.sub = Observable.interval(10000).subscribe((val) => { 
@@ -90,6 +93,7 @@ export class CommentslistComponent implements OnInit {
        //this.loadAllTheams();
        return this.comments;  
     }
+
     
     public get commentsExists(){
        //this.loadAllTheams();
@@ -130,15 +134,20 @@ export class CommentslistComponent implements OnInit {
     
     isReplayed(commentId:number){
         return this.answeredtoid[commentId];
+
+
     }
 */    
     doLike(commentId:number){
         console.log("Comment like:" + commentId);
     }
+
     
     doDislike(commentId:number){
         console.log("Comments dislike: " + commentId);
     }
+
+
     
     
  }
