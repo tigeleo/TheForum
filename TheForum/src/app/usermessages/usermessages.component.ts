@@ -37,7 +37,8 @@ export class UsermessagesComponent implements OnInit {
         this.loadAllMessages();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         this.curUser = this.authenticationService.currentUser;
-        this.model = UserMsg { id: -1, fromUserName: this.curUser.username, toUserName: "", title: "", text: "" };
+        UserMsg userMsg = UserMsg {id: -1, fromUserName: from_un, toUserName: "", title: "", text: "" };
+        this.model = userMsg;
     }
 
     private loadAllMessages() {

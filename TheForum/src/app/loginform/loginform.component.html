@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <h2>Login</h2>
+    <h2>Please enter your username and password to login</h2>
     <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
             <label class="InnerInputLabel" for="username">Username</label>
@@ -18,7 +18,7 @@
 			<button [disabled]="loading" id="memberLoginDialogokButton" class="s_ucNUmemberLoginDialogSkinNewokButton">
 				<div id="memberLoginDialogok" data-align="center" data-disabled="false" data-should-use-flex="true" class="b1" data-state="desktop shouldUseFlex center" style="position: relative; height: 100%; width: 100%;">
 					<div id="memberLoginDialogoklink" class="g-transparent-a b1link">
-						<span id="memberLoginDialogoklabel" class="b1label">ОК</span>
+						<span id="memberLoginDialogoklabel" class="b1label">Login</span>
 					</div>
 				</div>
 			</button>        

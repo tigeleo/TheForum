@@ -4,7 +4,7 @@ input {
     background-color: white;
     -webkit-rtl-ordering: logical;
     cursor: text;
-    padding: 1px;
+/*     padding: 1px; */
     border-width: 2px;
     border-style: inset;
     border-color: initial;
@@ -210,7 +210,7 @@ input, select, textarea {
 }
 user agent stylesheet
 input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
-    padding: 1px 0px;
+/*     padding: 1px 0px; */
 }
 .s_ucNUmemberLoginDialogSkinNew[data-state~="canBeClosed"] .s_ucNUmemberLoginDialogSkinNew_footer {
     padding-bottom: 10px;
@@ -249,7 +249,7 @@ input:not([type]), input[type="email" i], input[type="number" i], input[type="pa
 
 
 .b1[data-disabled="false"] .b1link {
-    background-color: rgba(114, 114, 114, 1);
+/*     background-color: rgba(114, 114, 114, 1); */
     border: solid rgba(96, 94, 94, 1) 0px;
     cursor: pointer !important;
 }
@@ -272,4 +272,34 @@ input:not([type]), input[type="email" i], input[type="number" i], input[type="pa
     bottom: 0;
     left: 0;
     transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
+
+
+.form-group button {
+	background-color: gray !important;
+	border: 2px solid;
+	border-radius: 5px;
+	color: white;
+	padding: 7px 10px;
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
+	height: 36px;
+	margin: 10px 0 5px 0;
+	width: 145px;
+}
+
+form div.form-group {
+	
+}
+
+form div.form-group  input {
+	border: 1px solid;
+	border-radius: 5px;
+	margin-top: 15px;
+}
+
+form div.form-group .help-block {
+	color: red;
+	font-weight: bold;
 }
