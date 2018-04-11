@@ -41,11 +41,11 @@ export class CommentslistComponent implements OnInit {
 
     
     private loadAllTheams() {
-
             this.commentslistService.getById(this.discussionid).subscribe(
                 comments => {                     
-                     if( comments && comments.length>0 ) {
-                        this.comments=comments;
+                     if( comments && comments.comments.length>0 ) {
+                         
+                        this.comments=comments.comments;
 
 
 
@@ -61,8 +61,8 @@ export class CommentslistComponent implements OnInit {
         this.sub = Observable.interval(10000).subscribe((val) => { 
             this.commentslistService.getById(this.discussionid).subscribe(
                 comments => {
-                    if( comments && comments.length>0 ) {
-                        this.comments=comments;
+                    if( comments && comments.comments.length>0 ) {
+                        this.comments=comments.comments;
 
 
 

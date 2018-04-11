@@ -6,6 +6,7 @@ import { TheamsCardsService } from './theamscards.service';
 import { TheamCard } from '../_models/index';
 import { AlertService } from '../_services/index';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../_services/index';
 
 @Component({
   selector: 'app-theamscards',
@@ -18,7 +19,7 @@ export class TheamscardsComponent implements OnInit {
     loading = false;
     returnUrl: string;
     
-  constructor( 
+  constructor( private authenticationService: AuthenticationService,
         private theamsCardService: TheamsCardsService,
         private route: ActivatedRoute,
         private router: Router,
@@ -64,5 +65,21 @@ export class TheamscardsComponent implements OnInit {
                     this.loading = false;
                 });
     }    
-
+     public get isAuthenticated(){
+         //console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+         return this.authenticationService.isAuthenticated;
+     }
+     
+     public get isNotAuthenticated(){
+        // console.log("isNotAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+         return !this.authenticationService.isAuthenticated;
+     }
+     
+     public get currectUser(){
+         return this.authenticationService.currentUser;
+     }
+     
+     public get isAdmin(){
+         return this.authenticationService.isAuthenticated && this.authenticationService.currentUser.role=='ADMIN';
+     }     
 }

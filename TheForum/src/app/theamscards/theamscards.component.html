@@ -11,12 +11,16 @@
 	      {{theam.text}}
 	    </p>
 	  </mat-card-content--> <mat-card-actions>
-<button mat-button (click)="deleteTheams(theam.id)">
+<button *ngIf="isAdmin"  mat-button (click)="deleteTheams(theam.id)">
 	<mat-icon matListIcon>delete_forever</mat-icon>
 </button>
-</mat-card-actions> </mat-card> </mat-grid-tile> <mat-grid-tile> <mat-card class="example-card">
-<form name="form" (ngSubmit)="f.form.valid && createNewTheam()"
-	#f="ngForm" novalidate>
+</mat-card-actions> 
+</mat-card> 
+</mat-grid-tile> 
+<mat-grid-tile> 
+<mat-card  *ngIf="isAdmin" class="example-card">
+
+<form name="form" (ngSubmit)="f.form.valid && createNewTheam()" 	#f="ngForm" novalidate>
 	<mat-card-header> <mat-card-title
 		class="sb-description">
 	<h3 style="color: #20303c;">Add theam</h3>
