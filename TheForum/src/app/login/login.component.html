@@ -1,25 +1,38 @@
-
-<div *ngIf="isAuthenticated">
-<div class="_3yEWu hold-right" data-reactid="11">
-	{{currectUser.username}} -
-	{{currectUser.firstName}}+{{currectUser.lastname}}
-	<button class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath" mat-button (click)="logout()"><span class="_2G3w-" data-reactid="30">Log Out</span></button>
-	<button	class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath" mat-button [routerLink]="['/userslist']">
-	<span class="_2G3w-" data-reactid="30">Staff Manager</span>
-	</button></div>
+<div class="header-warp" *ngIf="isAuthenticated">
+	<div class="_3yEWu hold-right" data-reactid="11">
+		{{currectUser.username}} -
+		{{currectUser.firstName}}+{{currectUser.lastname}}
+		<button
+			class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath"
+			mat-button (click)="logout()">
+			<span class="_2G3w-" data-reactid="30">Log Out</span>
+		</button>
+		<button
+			class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath"
+			mat-button [routerLink]="['/userslist']">
+			<span class="_2G3w-" data-reactid="30">Staff Manager</span>
+		</button>
+		<button
+			class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath"
+			mat-button [routerLink]="['/usermessages']">
+			<span class="_2G3w-" data-reactid="30">User Messages</span>
+		</button>
+	</div>
 </div>
 <div *ngIf="isNotAuthenticated">
-<div class="_3yEWu hold-right" data-reactid="11">
-	<button	class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath" mat-button [routerLink]="['/loginform']">
-	<span class="_2G3w-" data-reactid="30">Log In</span>
-	</button>
-	<button	class="_2ftM2 aUCPp forum-content-medium-font button-border-color button-secondary-text-color _3Hath" mat-button [routerLink]="['/register']">
-	<span class="_2G3w-" data-reactid="30">Register</span>
-	</button>
-</div>
+	<div class="_3yEWu hold-right" data-reactid="11">
+		<button
+			class="_2ftM2 aUCPp forum-content-medium-font button-border-color  button-border-radius button-secondary-text-color _3Hath"
+			mat-button [routerLink]="['/loginform']">
+			<span class="_2G3w-" data-reactid="30">Log In</span>
+		</button>
+		<button
+			class="_2ftM2 aUCPp forum-content-medium-font button-border-color  button-border-radius button-secondary-text-color _3Hath"
+			mat-button [routerLink]="['/register']">
+			<span class="_2G3w-" data-reactid="30">Register</span>
+		</button>
+	</div>
 
 </div>
-
-
 
 

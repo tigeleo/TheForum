@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AlertService } from '../_services/index';
 
 import { Router, ActivatedRoute } from '@angular/router';
@@ -6,6 +6,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserslistService } from './userslist.service';
 import { User } from '../_models/index';
 import {MatListModule} from '@angular/material/list';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { UserformComponent } from '../userform/userform.component';
 
 @Component({
   selector: 'app-userslist',
@@ -24,7 +26,8 @@ export class UserslistComponent implements OnInit {
   constructor(        private route: ActivatedRoute,
         private router: Router,
         private userslistService: UserslistService,
-        private alertService: AlertService) {
+        private alertService: AlertService,
+        public dialog: MatDialog) {
         
   }
 
@@ -46,7 +49,7 @@ export class UserslistComponent implements OnInit {
         );
     }
     
-    
+
     private loadUsersPage(){
         this.userslistService.getUsersPage(this.userPage).subscribe(
             users => { this.users=users;
@@ -58,6 +61,19 @@ export class UserslistComponent implements OnInit {
     }
     
     onSelect(user: User): void {
+        
+        let dialogRef = this.dialog.open(UserformComponent, {
+            width: '250px',
+            data: user
+
+          });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            this.selectedUser = result;
+
+          });
+        
+        /*
         console.log(event.currentTarget);
         let hel:Element=<Element>event.currentTarget;
         this.formTop=hel.getBoundingClientRect().top;
@@ -65,12 +81,13 @@ export class UserslistComponent implements OnInit {
       
         console.log(this.formTop + " + " + this.formLeft);
         this.selectedUser = user;
+        */
     }    
     updateUser(user: User): void {
         this.selectedUser = user;
     }  
     
-    // ?:PageEvent
+    
     public getServerData(event){
         console.log(event);
         this.userPage=event;
@@ -96,3 +113,22 @@ export class UserslistComponent implements OnInit {
     }    
 
 }
+
+
+/*
+@Component({
+    selector: 'dialog-overview-example-dialog',
+    templateUrl: 'dialog-overview-example-dialog.html',
+  })
+  export class DialogOverviewExampleDialog {
+
+    constructor(
+      public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+      @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+    onNoClick(): void {
+      this.dialogRef.close();
+    }
+
+  }
+*/

@@ -9,6 +9,7 @@ import { TheamlistComponent } from './theamlist/index';
 import { UserslistComponent } from './userslist/index';
 import { TheamformComponent } from './theamform/index';
 import { TheamfullviewComponent } from './theamfullview/index';
+import { UsermessagesComponent } from './usermessages/index';
 
 const appRoutes: Routes = [
     { path: '',  component: TheamscardsComponent, canActivate: [AuthGuard] },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     { path: 'userslist', component: UserslistComponent },
     { path: 'theamform', component: TheamformComponent },
     { path: 'theamfullview', component: TheamfullviewComponent },
+    { path: 'usermessages', component: UsermessagesComponent },
 
     // otherwise redirect to home
     //{ path: '**',  redirectTo: '' }

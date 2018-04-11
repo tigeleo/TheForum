@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -53,7 +53,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // get discussion list
             if (request.url.endsWith(myGlobals.backendApiLinks.theamslist) && request.method === 'GET') {
                 
-                let theams=myData.DATA_THEAMS;
+                let theams = myData.DATA_THEAMS;
 
  
                 return Observable.of(new HttpResponse({ status: 200, body: theams }));
@@ -107,7 +107,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                  console.log(filteredtheamlist);
                filteredtheamlist[0].theams=filteredtheamlist[0].theams.concat(discussion.theam);
                 
-                return Observable.of(new HttpResponse({ status: 200, body: discussion }));
+                return Observable.of(new HttpResponse({ status: 200, body: discussion.theam }));
             }
            
             // add new comment
@@ -193,7 +193,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 let filteredtheamlist = theamlist.filter(theam => {
                     return theam.id != theamid;
                 });                
-                myData.DATA_THEAMS  = filteredtheamlist;
+                //myData.DATA_THEAMS  = filteredtheamlist;
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 if (filteredtheamlist) {

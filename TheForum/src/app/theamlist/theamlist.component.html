@@ -1,11 +1,168 @@
-<mat-list>
-   <h3 matSubheader>List of discussions{{theamid}}</h3>
-   <mat-list-item *ngFor="let theam of theams">
-      <mat-icon matListIcon [routerLink]="['/theamfullview']" [queryParams]="theam">folder</mat-icon>
+
+<app-theamform *ngIf="isAuthenticated && false" [theamid]="theamid"></app-theamform>
+<!-- mat-list>
+   <mat-list-item *ngFor="let theam of theams" >
+   	<div matLine [routerLink]="['/theamfullview']" [queryParams]="theam">
+      <mat-icon matListIcon >face</mat-icon>
+<div class="_2NZd5 forum-text-color avatar" >
+<span class="_2F9CD" data-hook="avatar__name">{{theam.author}}</span>
+<div class="_2GgmO badge" data-hook="badge" *ngIf="theam.author_role=='Admin'">
+<svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" class="_2eWEl forum-icon-fill" style="fill-rule: evenodd;">
+<path d="M15.3812,6.495914 L12.6789333,8.77258837 C12.6191333,8.84477644 12.5099333,8.85722265 12.4354,8.79997005 C12.4215333,8.79001308 12.4094,8.77756686 12.3998667,8.76429089 L9.78686667,6.14327115 C9.67766667,5.99225704 9.46186667,5.95491839 9.305,6.05863687 C9.26946667,6.08186981 9.23913333,6.11091099 9.21573333,6.14493065 L6.60013333,8.81075677 C6.5464,8.88626383 6.43893333,8.90534803 6.3592,8.85390366 C6.34446667,8.84394669 6.33146667,8.83233022 6.32106667,8.81905425 L3.61966667,6.50587098 C3.5018,6.36149485 3.28426667,6.33577266 3.13346667,6.44861837 C3.0494,6.51167921 3,6.60792997 3,6.70998895 L4,14 L15,14 L16,6.70169148 C16,6.51831719 15.8448667,6.36979232 15.6533333,6.36979232 C15.5476,6.36979232 15.4470667,6.41625821 15.3812,6.495914 Z">
+</path>
+</svg>
+</div>
+</div>
+<span class="CREATED">  {{theam.created}}</span>
+     </div>
       <h4 matLine id="{{theam.id}}">{{theam.title}}</h4>
       <p matLine class="demo-2"> {{theam.body}} </p>
    </mat-list-item>
    
 
-</mat-list>
-<app-theamform [theamid]="theamid"></app-theamform>
+</mat-list-->
+
+
+
+<div class="_2avmN" data-hook="animated-loader__container">
+<div>
+</div>
+<div>
+<div>
+<div class="_3EoVZ post-list _1Jr6r">
+<div class="_2avmN" data-hook="animated-loader__container">
+<div>
+</div>
+<div>
+<div class="">
+<div>
+<div class="_2CiWW ieH3H" data-hook="post-list" style="position: relative; height: 1152.2px;">
+<div *ngIf="isAuthenticated" class="_2tyB_" >
+<div>
+<div class="_386T_ forum-content-medium-font button-background-color button-primary-text-color create-post undefined" tabindex="0" data-hook="create-post" role="button" aria-labelledby="create-post-label">
+<span class="nFerz avatar-image">
+<div class="_1Fm4K fluid-avatar-image">
+</div>
+</span>
+<span id="create-post-label" (click)="createTheam(theamid)" class="_2S-XM">Создать пост</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.969" viewBox="0 0 16 15.969" class="MufoH button-primary-icon-fill" style="fill-rule: evenodd;">
+<path d="M847.669,535.445l-1.553,1.546L843,533.87l1.553-1.546a1.1,1.1,0,0,1,1.561,0l1.56,1.561A1.1,1.1,0,0,1,847.669,535.445ZM835,548h-3v-3l10-10,3,3Z" transform="translate(-832 -532.031)">
+</path>
+</svg>
+</div>
+<!-- react-empty: 553 -->
+</div>
+</div>
+
+
+<div *ngFor="let theam of theams; let i = index" class="_2tyB_ post-list__post-list-item" id="5a591fbdd9ad210014bf7815_{{i}}" data-hook="post-list-item" >
+<a target="_top"  [routerLink]="['/theamfullview']" [queryParams]="theam" class="_1HZQ5 _2MwUY forum-content-medium-font forum-text-color forum-card-background-color forum-card-border-color post-list-item" role="article" data-hook="post-list-item" style="border-width: 1px;">
+<div class="_3xbLk _1EB0G post-header">
+<object type="communities/link">
+<div>
+<!-- a href="https://tigeleo.wixsite.com/theforum/members/admin" target="_top"-->
+<div class="_2NZd5 forum-text-color avatar">
+<span class="nFerz avatar-image">
+<div class="_1Fm4K fluid-avatar-image">
+</div>
+</span>
+<span class="_2F9CD" data-hook="avatar__name">{{theam.author}}</span>
+<div class="_2GgmO badge" data-hook="badge" *ngIf="theam.author_role=='Admin'">
+<svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" class="_2eWEl forum-icon-fill" style="fill-rule: evenodd;">
+<path d="M15.3812,6.495914 L12.6789333,8.77258837 C12.6191333,8.84477644 12.5099333,8.85722265 12.4354,8.79997005 C12.4215333,8.79001308 12.4094,8.77756686 12.3998667,8.76429089 L9.78686667,6.14327115 C9.67766667,5.99225704 9.46186667,5.95491839 9.305,6.05863687 C9.26946667,6.08186981 9.23913333,6.11091099 9.21573333,6.14493065 L6.60013333,8.81075677 C6.5464,8.88626383 6.43893333,8.90534803 6.3592,8.85390366 C6.34446667,8.84394669 6.33146667,8.83233022 6.32106667,8.81905425 L3.61966667,6.50587098 C3.5018,6.36149485 3.28426667,6.33577266 3.13346667,6.44861837 C3.0494,6.51167921 3,6.60792997 3,6.70998895 L4,14 L15,14 L16,6.70169148 C16,6.51831719 15.8448667,6.36979232 15.6533333,6.36979232 C15.5476,6.36979232 15.4470667,6.41625821 15.3812,6.495914 Z">
+</path>
+</svg>
+<!-- react-empty: 567 -->
+</div>
+</div>
+<!-- /a -->
+</div>
+</object>
+<span class="_27HWd">
+<div class="_12I_f">
+<span class="time-ago" data-hook="time-ago">{{theam.created}}</span>
+</div>
+</span>
+<span class="_2mwEI">
+<div class="_1xL2F">
+<div class="_2GWae pin-icon" data-hook="pin-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" class="icon-secondary-fill" style="fill-rule: evenodd;">
+<path d="M1003,212h-6a2.18,2.18,0,0,0-2,2v13a1,1,0,0,0,1,1l4-3.465,4,3.465a1.016,1.016,0,0,0,1-1V214A1.976,1.976,0,0,0,1003,212Z" transform="translate(-995 -212)">
+</path>
+</svg>
+</div>
+</div>
+</span>
+<div class="_3rXbM">
+<div class="_1h-NJ more-button" data-hook="more-button">
+<div class="_J4Cp" tabindex="0" role="menubar" aria-label="More actions" id="more-button-5a591fbdd9ad210014bf7815">
+<svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" role="img" class="forum-icon-fill">
+<path d="M2.44398805,5.99973295 C1.62345525,5.9690612 0.980075653,5.28418875 1.00047182,4.46312144 C1.02086799,3.64205413 1.69745853,2.98998831 2.51850166,3.0001164 C3.33954478,3.01024449 3.99985313,3.67880182 4,4.50012255 C3.98424812,5.34399206 3.28763905,6.0153508 2.44398805,5.99973295 L2.44398805,5.99973295 Z M2.44398805,10.9997329 C1.62345525,10.9690612 0.980075653,10.2841888 1.00047182,9.46312144 C1.02086799,8.64205413 1.69745853,7.98998831 2.51850166,8.0001164 C3.33954478,8.01024449 3.99985313,8.67880182 4,9.50012255 C3.98424812,10.3439921 3.28763905,11.0153508 2.44398805,10.9997329 L2.44398805,10.9997329 Z M2.44398805,15.9997329 C1.62345525,15.9690612 0.980075653,15.2841888 1.00047182,14.4631214 C1.02086799,13.6420541 1.69745853,12.9899883 2.51850166,13.0001164 C3.33954478,13.0102445 3.99985313,13.6788018 4,14.5001225 C3.98424812,15.3439921 3.28763905,16.0153508 2.44398805,15.9997329 L2.44398805,15.9997329 Z">
+</path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<h2 class="_1dN_D _1qN9A forum-title-medium-font forum-text-color post-title" data-hook="post-title" tabindex="0">
+<object type="communities/link">
+<a target="_top"  [routerLink]="['/theamfullview']" [queryParams]="theam" style="color: inherit;">{{theam.title}}</a>
+</object>
+</h2>
+<div class="_3PoZM">
+<div class="_2hMaY vElw5" data-hook="post-description">
+<div style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 4;">
+<div class="uFiAR">{{theam.body}}</div>
+</div>
+</div>
+</div>
+<div class="_3W71S">
+<div class="O2IaJ _2HCgl forum-separator-background-color">
+</div>
+<div class="r9wh-">
+<div class="_1fiuR post-list-item__view-count" data-hook="post-list-item__view-count">Просмотров: {{theam.watchers}}</div>
+<object type="communities/link">
+<a target="_top"  [routerLink]="['/theamfullview']" [queryParams]="theam" class="_2d4Ep forum-text-color" data-hook="post-list-item__comment-count">Комментариев: {{theam.comments}}</a>
+</object>
+<button class="_2FJRg" aria-live="assertive" data-hook="post-list-item__like-button">
+<span class="M4S_g forum-text-color" data-hook="post-list-item__like-count">0</span>
+<div class="_6sRW_" aria-label="like Is unliked" data-hook="like-button">
+<div class="_127iX">
+<div class="_24ftW">
+</div>
+</div>
+<div class="_3DVTl">
+<div class="_24ftW">
+</div>
+</div>
+<div class="_12G5I">
+<div class="_24ftW">
+</div>
+</div>
+<div class="_3JSSf">
+<div class="_24ftW">
+</div>
+</div>
+<div class="_2oSAD">
+</div>
+<svg class="" width="18" viewBox="0 0 18 16">
+<path d="M314,262.364a4.309,4.309,0,0,0-8-2.279,4.309,4.309,0,0,0-8,2.279,4.366,4.366,0,0,0,1.483,3.286l6.123,6.185a0.553,0.553,0,0,0,.788,0l6.123-6.185A4.366,4.366,0,0,0,314,262.364Z" transform="translate(-297.25 -257.25)">
+</path>
+</svg>
+</div>
+</button>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
