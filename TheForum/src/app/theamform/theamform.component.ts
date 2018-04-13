@@ -47,14 +47,17 @@ export class TheamformComponent implements OnInit {
                     console.log(data);
                     console.log(this.theamid);
                     this.loading = false;
-                    this.router.navigate([this.returnUrl], { queryParams: {id:this.theamid} });
+                    //this.router.navigate([this.returnUrl], { queryParams: {id:this.theamid} });
                     this.dialogRef.close({'data':data});
                   
                 },
                 error => {
-                    this.alertService.error(error);
+                    this.alertService.error(error.message);
                     this.loading = false;
                     this.dialogRef.close();
                 });
-    }    
+    }  
+    
+    
+
 }

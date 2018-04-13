@@ -80,7 +80,9 @@ export class TheamlistComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed with ' + result);
             if(result) {
-                this.theams=this.theams.concat(result.data);
+                //debugger;
+                //this.theams=this.theams.concat(result.data);
+                this.theams=result.data;
             }
         });
         
@@ -93,7 +95,18 @@ export class TheamlistComponent implements OnInit {
         console.log(this.formTop + " + " + this.formLeft);
         this.selectedUser = user;
         */
-    }      
+    }   
+    
+    
+    
+    deleteTopic(theamid){
+        this.theamlistService.deleteTopic(theamid).subscribe(
+                theams => { 
+                    this.theams=theams;
+                }
+        );
+    }
+    
     public get isAuthenticated(){
         //console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
         return this.authenticationService.isAuthenticated;

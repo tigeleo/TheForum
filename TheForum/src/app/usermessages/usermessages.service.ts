@@ -12,4 +12,10 @@ export class UsermessagesService {
     getAll() {
         return this.http.get<UserMsg[]>(myGlobals.backendApiLinks.usersmessages);
     }
+    
+    
+    public createNewMessage(model: UserMsg) {
+        //this.loading = true;
+        return this.http.get<UserMsg[]>(myGlobals.backendApiLinks.usersmessages);
+    }
 }

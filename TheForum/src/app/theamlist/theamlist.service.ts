@@ -13,5 +13,9 @@ export class TheamlistService {
         return this.http.get<Theam[]>(myGlobals.backendApiLinks.theamslist+theamid);
     }
     
+    deleteTopic(theamid: number) {
+        return this.http.get<Theam[]>(myGlobals.backendApiLinks.theamslist_delete+theamid);
+    }
+    
 
 }
