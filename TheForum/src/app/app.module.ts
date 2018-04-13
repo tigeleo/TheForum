@@ -109,7 +109,7 @@ import { UsermessagesComponent } from './usermessages/usermessages.component';
         },
         UsermessagesService,       
         // provider used to create fake backend
-        //fakeBackendProvider
+        fakeBackendProvider
   ],
   entryComponents:[UserformComponent,],
   bootstrap: [AppComponent]

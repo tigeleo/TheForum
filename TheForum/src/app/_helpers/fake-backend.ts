@@ -218,15 +218,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 if (filteredComments && filteredComments.length>0) {
-                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.author,body:c.body,answeredid:-1};});
+                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.author,body:c.body,answeredid:-1,postedago:"posted 1 day ago"};});
                    console.log("arrayComments:");
                    console.log(filteredComments[0]);
                     
                     
-                    return Observable.of(new HttpResponse({ status: 200, body: {comments:arrayComments} }));
+                    return Observable.of(new HttpResponse({ status: 200, body: arrayComments }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return Observable.of(new HttpResponse({ status: 200, body: {comments:[]} }));
+                    return Observable.of(new HttpResponse({ status: 200, body: {} }));
                 }
             }            
             

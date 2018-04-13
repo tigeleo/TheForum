@@ -4,4 +4,5 @@
     author: string;
     body: string;
     answeredid: number;
+    postedago: string;
 }
