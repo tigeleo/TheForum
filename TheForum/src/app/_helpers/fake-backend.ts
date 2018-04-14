@@ -128,7 +128,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                  
                  console.log("Comments filters:");
                  console.log(filteredComments);
-               filteredComments[0].comments=filteredComments[0].comments.concat({"id":comment.id,"author":comment.author,     "body":comment.body });
+               filteredComments[0].comments=filteredComments[0].comments.concat({"id":comment.id,"author":comment.author,author_role:comment.author_role, "body":comment.body,postedago:"posted 1 day ago" });
                 
                 return Observable.of(new HttpResponse({ status: 200, body: filteredComments[0] }));
             }
@@ -218,7 +218,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 if (filteredComments && filteredComments.length>0) {
-                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.author,body:c.body,answeredid:-1,postedago:"posted 1 day ago"};});
+                     let arrayComments= filteredComments[0].comments.map(c => {return {id:c.id,discussionid:discussionid,author:c.author,author_role:c.author_role,body:c.body,answeredid:-1,postedago:"posted 1 day ago"};});
                    console.log("arrayComments:");
                    console.log(filteredComments[0]);
                     

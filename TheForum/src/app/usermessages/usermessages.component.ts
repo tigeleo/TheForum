@@ -54,7 +54,7 @@ export class UsermessagesComponent implements OnInit {
     }
     public createNewMessage() {
         //this.loading = true;
-        this.usermessagesService.createNewMassage(this.model)
+        this.usermessagesService.createNewMessage(this.model)
             .subscribe(
             data => {
                 console.log(data); 
