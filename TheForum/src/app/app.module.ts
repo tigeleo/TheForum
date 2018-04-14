@@ -14,6 +14,7 @@ import {MatPaginatorModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { ImageUploadModule } from "angular2-image-upload";
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
@@ -46,6 +47,7 @@ import { UserslistService } from './userslist/userslist.service';
 import { PaginationComponent } from './paggination/pagination.component';
 import { UsermessagesService } from './usermessages/usermessages.service';
 import { UsermessagesComponent } from './usermessages/usermessages.component';
+
 
 @NgModule({
   declarations: [
@@ -81,7 +83,8 @@ import { UsermessagesComponent } from './usermessages/usermessages.component';
     MatFormFieldModule,
     MatPaginatorModule,
     MatDialogModule,
-    routing
+    routing,
+    ImageUploadModule.forRoot()
   ],
   providers: [
         AuthGuard,
@@ -109,7 +112,7 @@ import { UsermessagesComponent } from './usermessages/usermessages.component';
         },
         UsermessagesService,       
         // provider used to create fake backend
-        fakeBackendProvider
+        //fakeBackendProvider
   ],
   entryComponents:[UserformComponent,],
   bootstrap: [AppComponent]

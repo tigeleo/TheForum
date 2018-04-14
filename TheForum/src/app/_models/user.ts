@@ -6,4 +6,5 @@
     firstName: string;
     lastName: string;
     password: string;
+    avator: string;
 }
