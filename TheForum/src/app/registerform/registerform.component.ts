@@ -38,18 +38,7 @@ export class RegisterformComponent implements OnInit {
     }
     
     
-    public onUploadFinished($event){
-        debugger;
-        console.log($event);
-    }
-    public onUploadStateChanged($event){
-        debugger;
-        console.log($event);
-    }
-    public onUpload($event){
-        debugger;
-        console.log($event);
-    }
+
     changeListener($event) : void {
         this.readThis($event.target);
       }
