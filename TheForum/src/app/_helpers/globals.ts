@@ -27,7 +27,7 @@ export const backendApiLinks = {
     commentdelete: API_BASE_NAME + '/api/commentslist/delete/', //delete comment
     userslist: API_BASE_NAME + "/api/users/list/all", // display all registred users
     userslistpage: API_BASE_NAME + "/api/users/list/page", //pagination  registred users
-    userupdate: API_BASE_NAME + "/api/users/update", // update user date
+    userupdate: API_BASE_NAME + "/api/users/edit", // update user date
     usersmessages: API_BASE_NAME + "/api/usermessages/getallbyuser", // get all message by user_to
     usersmessages_add: API_BASE_NAME + "/api/usermessages/add", // get all message by user_to
     usersmessages_regexp: /\/api\/usersmessages\/\d+$/, // get all message by user_to

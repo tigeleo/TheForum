@@ -1,8 +1,11 @@
 <mat-list>
    <h3 matSubheader>List of all registered users</h3>
    <mat-list-item *ngFor="let user of users">
-      <mat-icon matListIcon [routerLink]="['/userdetailsform']" [queryParams]="user">person</mat-icon>
-      <li matLine id="{{user.id}}" (click)="onSelect(user)" [class.selected]="user === selectedUser"><span class="users badge">{{user.id}}</span>{{user.firstname}}, {{user.lastname}}, {{user.role}}</li>
+      <li matLine id="{{user.id}}" (click)="onSelect(user)" [class.selected]="user === selectedUser">
+      	<mat-icon *ngIf="!user.avator" matListIcon [routerLink]="['/userdetailsform']" [queryParams]="user">person</mat-icon>
+   		<img *ngIf="user.avator" height="30" width="30" src="{{user.avator}}" >
+      	<span class="users badge">{{user.id}}</span>{{user.firstname}}, {{user.lastname}}, {{user.role}}
+      </li>
    </mat-list-item>
    
 

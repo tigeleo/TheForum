@@ -41,8 +41,10 @@ export class UserslistComponent implements OnInit {
     private loadAllTheams() {
  
         this.userslistService.getAll().subscribe(
-            users => { this.users=users;
-                        console.log(this.users);
+            users => { 
+                debugger;
+                this.users=users;
+                console.log(this.users);
                 
 
             }

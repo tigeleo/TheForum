@@ -40,7 +40,7 @@ li {
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 60px;
   border-radius: 4px;
 }
 li.selected:hover {

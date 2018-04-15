@@ -3,7 +3,9 @@
     discussionid:number;
     author: string;
     author_role: string;
+    author_avator: string;
+    author_join:string;
     body: string;
     answeredid: number;
-    postedago: string;
+    created: string;
 }

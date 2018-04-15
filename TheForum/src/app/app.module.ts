@@ -41,6 +41,7 @@ import { TheamformService } from './theamform/theamform.service';
 import { CommentslistComponent } from './commentslist/commentslist.component';
 import { CommentsformComponent } from './commentsform/commentsform.component';
 import { UserformComponent } from './userform/userform.component';
+import { UserformService } from './userform/userform.service';
 import { CommentsformService } from './commentsform/commentsform.service';
 import { UserslistComponent } from './userslist/userslist.component';
 import { UserslistService } from './userslist/userslist.service';
@@ -96,6 +97,7 @@ import { UsermessagesComponent } from './usermessages/usermessages.component';
         CommentslistService,
         CommentsformService,
         UserslistService,
+        UserformService,
         {
             provide: MatDialogRef,
             useValue: {}

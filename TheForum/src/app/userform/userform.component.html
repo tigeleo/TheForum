@@ -8,8 +8,13 @@
 </div><div>  <label>Second name:
     <input [(ngModel)]="selectedUser.lastname" placeholder="Last Name">
   </label>
-</div><div>  <label>Role:
+</div>
+<div>  <label>Role:
     <input [(ngModel)]="selectedUser.role" placeholder="Role">
+    <select [(ngModel)]="selectedUser.role">
+    	<option value="ADMIN">Admin</option>
+    	<option value="USER">User</option>
+    </select>
   </label>
 </div>
 <div><button (click)="updateUser()">Update</button></div>
