@@ -13,5 +13,8 @@ export class CommentslistService {
         return this.http.get<any>(myGlobals.backendApiLinks.commentslist+discussionid);
     }
     
-
+    deleteComment(commentid: number) {
+        return this.http.get<Comment[]>(myGlobals.backendApiLinks.commentdelete+commentid);
+    }
+    
 }
