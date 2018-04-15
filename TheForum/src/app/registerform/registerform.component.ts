@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AlertService, UserService } from '../_services/index';
-import { ImageUploadModule } from "angular2-image-upload";
+
 
 @Component({
   selector: 'app-registerform',
