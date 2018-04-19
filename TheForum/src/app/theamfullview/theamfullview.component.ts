@@ -43,7 +43,7 @@ export class TheamfullviewComponent implements OnInit {
         */
         this.theamfullviewService.getById(id).subscribe(
                 dicussion => { 
-                    debugger;
+                    //debugger;
                     this.theam=dicussion;
                     console.log(this.theam);
                     

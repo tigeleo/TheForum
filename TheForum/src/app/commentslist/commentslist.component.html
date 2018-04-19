@@ -1,22 +1,7 @@
-<mat-list *ngIf="commentsExists">
-   <div style="margin-left: 40px;border-size:1px">
-   <mat-list-item *ngFor="let comment of commentsList">  
-<article id="{{comment.id}}" class="article-comment _2lpCC forum-content-medium-font forum-text-color forum-card-background-color forum-card-border-color comment" data-hook="comment" style="border-width: 1px;">
-<div>{{comment.author}}</div>
-<div> {{comment.body}}</div>
-</article>
-<button *ngIf="isAuthenticated && (isAdmin || currectUser.username==comment.author)" class="btn-delete-comment" mat-button (click)="deleteComment(comment.id)">
-	<mat-icon matListIcon>delete_forever</mat-icon>
-</button>
-   </mat-list-item>
-	</div>
-</mat-list>
 
 
-
-
-
-<div class="post " style="" id="post_811358" *ngFor="let comment of commentsList; let i = index " >
+<div *ngIf="commentsExists">
+<div class="post " style="" id="post_811358"  *ngFor="let comment of commentsList; let i = index " >
 <div class="post_author">
 	<!-- start: postbit_avatar -->
 <div class="author_avatar">
@@ -28,7 +13,7 @@
 <!-- end: postbit_avatar -->
 	<div class="author_information">
 			<strong><span class="largetext"><a href="https://community.mybb.com/user-32248.html">{{comment.author}}</a></span></strong> <!-- start: postbit_offline -->
-<img src="https://community.mybb.com/images/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- img src="https://community.mybb.com/images/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status"-->
 <!-- end: postbit_offline --><br>
 <!-- 			<span class="smalltext"> -->
 <!-- 				Modogodo<br> -->
@@ -53,7 +38,7 @@
 	<div class="post_head">
 		<!-- start: postbit_posturl -->
 <div class="float_right" style="vertical-align: top">
-<strong><a href="thread-111498-post-811358.html#pid811358" title="Avatars in base64">#{{i}}</a></strong>
+<strong>#{{i}}</strong>
 
 </div>
 <!-- end: postbit_posturl -->
@@ -75,19 +60,10 @@
 	
 </div>
 <div class="post_controls">
-	<div class="postbit_buttons author_buttons float_left">
-		<!-- start: postbit_www -->
-<a href="http://www.modogodo.com" target="_blank" rel="noopener" title="Visit this user's website" class="postbit_website"><span>Website</span></a>
-<!-- end: postbit_www --><!-- start: postbit_find -->
-<a href="search.php?action=finduser&amp;uid=32248" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
-<!-- end: postbit_find -->
-	</div>
-	<div class="postbit_buttons post_management_buttons float_right">
-		<!-- start: postbit_quote -->
-<a href="newreply.php?tid=111498&amp;replyto=811358" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
-<!-- end: postbit_quote -->
-	</div>
+<button *ngIf="isAuthenticated && (isAdmin || currectUser.username==comment.author)" class="btn-delete-comment" mat-button (click)="deleteComment(comment.id)">
+	<mat-icon matListIcon>delete_forever</mat-icon>
+</button>
 </div>
 </div>      
-      
+</div>      
 <app-commentsform [discussionid]="discussionid" ></app-commentsform>
