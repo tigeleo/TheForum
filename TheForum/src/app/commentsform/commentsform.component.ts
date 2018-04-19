@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
     
 export class CommentsformComponent implements OnInit {
-  model: Comment = {id:-1,discussionid:-1,author:"",author_role:"",body:"",answeredid:-1,postedago:""};
+  model: Comment = {id:-1,discussionid:-1,author:"",author_role:"",author_join:"",author_avator:"",body:"",answeredid:-1,created:""};
   loading = false;
   display:boolean =true;
   returnUrl: string;
