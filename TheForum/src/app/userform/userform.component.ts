@@ -16,6 +16,7 @@ export class UserformComponent implements OnInit {
     selectedUser: User;
     loading = false;
 
+
     constructor(
         public userformservice: UserformService,
         public dialogRef: MatDialogRef<UserformComponent>,
@@ -38,5 +39,17 @@ export class UserformComponent implements OnInit {
         this.loading = true;
         this.dialogRef.close();
     }
+    changeListener($event) : void {
+        this.readThis($event.target);
+      }
 
+      readThis(inputValue: any): void {
+        var file:File = inputValue.files[0];
+        var myReader:FileReader = new FileReader();
+
+        myReader.onloadend = (e) => {
+          this.selectedUser.avator=myReader.result;
+        }
+        myReader.readAsDataURL(file);
+      }
 }

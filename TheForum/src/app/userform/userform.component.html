@@ -2,6 +2,12 @@
 <h2>{{ selectedUser.firstname | uppercase }}  {{ selectedUser.lastname | uppercase }} Details</h2>
 <!-- <h2>{{ selectedUser.username | uppercase}} Details</h2> -->
 <!-- <div><span>id: </span>{{selectedUser.id}}</div> -->
+        <div class="form-group">
+        	<label class="InnerInputLabel" for="password">Avator</label>
+	        <img width="100" height="100" src="{{selectedUser.avator}}" >
+	        <input type="hidden" class="form-control" name="avator" [(ngModel)]="selectedUser.avator" #avator="ngModel"  />
+			<input type="file" accept="image/*" (change)="changeListener($event)">
+		</div>
 <div class="user-form-div">
   <label>First name:
     <input [(ngModel)]="selectedUser.firstname" placeholder="First Name">
@@ -26,5 +32,6 @@
     </select>
   </label>
 </div>
-<div><button (click)="updateUser()" class="user-form-btn">Update</button></div>
+<div><button (click)="updateUser()" class="user-form-btn">Update</button>
+<button (click)="onNoClick()" class="user-form-btn">Close</button></div>
 </div>
