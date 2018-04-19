@@ -13,9 +13,8 @@ export class UserformService {
 
     updateUser(user: User){
         return this.http.post<any>(myGlobals.backendApiLinks.userupdate, user)
-            .map(user => {
-    
-                return user;
+            .map(user => {  
+               return user;
             });    
     }
     

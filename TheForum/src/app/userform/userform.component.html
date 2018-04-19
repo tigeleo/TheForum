@@ -1,15 +1,24 @@
 <div *ngIf="selectedUser" style="position: fixed;visibility: visible;z-index: 200;left:{{(formLeft | number:0)*1}}px;top:{{formTop}}px">
-<h2>{{ selectedUser.firstname | uppercase }} Details</h2>
-<div><span>id: </span>{{selectedUser.id}}</div>
-<div>
+<h2>{{ selectedUser.firstname | uppercase }}  {{ selectedUser.lastname | uppercase }} Details</h2>
+<!-- <h2>{{ selectedUser.username | uppercase}} Details</h2> -->
+<!-- <div><span>id: </span>{{selectedUser.id}}</div> -->
+<div class="user-form-div">
   <label>First name:
     <input [(ngModel)]="selectedUser.firstname" placeholder="First Name">
   </label>
-</div><div>  <label>Second name:
+</div><div class="user-form-div">  <label>Second name:
     <input [(ngModel)]="selectedUser.lastname" placeholder="Last Name">
   </label>
 </div>
-<div>  <label>Role:
+<div class="user-form-div">  <label>User name:
+    <input [(ngModel)]="selectedUser.username" placeholder="Last Name">
+  </label>
+</div>
+<div class="user-form-div">  <label>Password:
+    <input [(ngModel)]="selectedUser.password" placeholder="Last Name">
+  </label>
+</div>
+<div class="user-form-div">  <label>Role:
     <input [(ngModel)]="selectedUser.role" placeholder="Role">
     <select [(ngModel)]="selectedUser.role">
     	<option value="ADMIN">Admin</option>
@@ -17,5 +26,5 @@
     </select>
   </label>
 </div>
-<div><button (click)="updateUser()">Update</button></div>
+<div><button (click)="updateUser()" class="user-form-btn">Update</button></div>
 </div>
