@@ -34,6 +34,7 @@ import { TheamscardsComponent } from './theamscards/theamscards.component';
 import { TheamsCardsService } from './theamscards/theamscards.service';
 import { TheamlistComponent } from './theamlist/theamlist.component';
 import { TheamlistService } from './theamlist/theamlist.service';
+import { TheamfullviewService } from './theamfullview/theamfullview.service';
 import { CommentslistService } from './commentslist/commentslist.service';
 import { TheamfullviewComponent } from './theamfullview/theamfullview.component';
 import { TheamformComponent } from './theamform/theamform.component';
@@ -92,6 +93,7 @@ import { UsermessagesComponent } from './usermessages/usermessages.component';
         AlertService,
         AuthenticationService,
         TheamlistService,
+        TheamfullviewService,
         TheamformService,
         TheamsCardsService,
         CommentslistService,

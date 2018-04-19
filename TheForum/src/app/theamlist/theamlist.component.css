@@ -26,7 +26,7 @@ mat-line{
 mat-list-item{
 	flex-grow: 1;
     /*border: 1px solid black;*/
-	height:150px;
+	height:100%;
 	padding: 11px 17px 12px;
 	margin-bottom: 20px;
     overflow: auto;

@@ -21,6 +21,7 @@ export const backendApiLinks = {
     theamslist_regexp: /\/api\/theamslist\/\d+$/, //display all  discussions by forum id
     theamadd: API_BASE_NAME + '/api/discusse/add', //discussion add
     theamdelete: API_BASE_NAME + '/api/discusse/delete/', //discussion delete   
+    theamget: API_BASE_NAME + '/api/discusse/getbyid/', //discussion delete   
     commentslist: API_BASE_NAME + '/api/commentslist/',// display all  comments by discussion id
     commentslist_regexp: /\/api\/commentslist\/\d+$/,
     commentadd: API_BASE_NAME + '/api/commentslist/add', //add comment

@@ -3,6 +3,7 @@ import { CommentslistComponent } from '../commentslist/commentslist.component';
 import { CommentsformComponent } from '../commentsform/commentsform.component';
 import { Theam } from '../_models/index';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { TheamfullviewService } from './theamfullview.service';
 
 @Component({
   selector: 'app-theamfullview',
@@ -14,7 +15,7 @@ export class TheamfullviewComponent implements OnInit {
   returnUrl: string;
 
     
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { 
+  constructor(private theamfullviewService:TheamfullviewService ,private router: Router, private activatedRoute: ActivatedRoute) { 
 
   }
 
@@ -31,6 +32,7 @@ export class TheamfullviewComponent implements OnInit {
 */
        this.activatedRoute.queryParams.subscribe((params: Params) => {
         let id = params["id"];
+        /*
         let title = params["title"];
         let body = params["body"];
         let author = params["author"];
@@ -38,7 +40,17 @@ export class TheamfullviewComponent implements OnInit {
         let watchers = params["watchers"];
         let comments = params["comments"];
         let created = params["created"];
-        this.theam = {id:id,title:title, body:body,author:author,author_role:author_role,watchers:watchers,comments:comments,created:created};    
+        */
+        this.theamfullviewService.getById(id).subscribe(
+                dicussion => { 
+                    debugger;
+                    this.theam=dicussion;
+                    console.log(this.theam);
+                    
+
+                }
+            );
+        //this.theam = {id:id,title:title, body:body,author:author,author_role:author_role,watchers:watchers,comments:comments,created:created};    
       });
      this.returnUrl = '/theamslist';
 

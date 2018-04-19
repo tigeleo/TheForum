@@ -1,17 +1,5 @@
 <app-theamform *ngIf="isAuthenticated && false" [theamid]="theamid"></app-theamform>
-<div class="_2avmN" data-hook="animated-loader__container">
-<div>
-</div>
-<div>
-<div>
-<div class="_3EoVZ post-list _1Jr6r">
-<div class="_2avmN" data-hook="animated-loader__container">
-<div>
-</div>
-<div>
-<div class="">
-<div>
-<div class="_2CiWW ieH3H" data-hook="post-list" style="position: relative; height: 1152.2px;">
+
 <div *ngIf="isAuthenticated" class="_2tyB_" >
 <div>
 <div class="_386T_ forum-content-medium-font button-background-color button-primary-text-color create-post undefined" tabindex="0" data-hook="create-post" role="button" aria-labelledby="create-post-label">
@@ -31,7 +19,9 @@
 <mat-list>
    <mat-list-item *ngFor="let theam of theams" >
    	<div matLine>
-      <mat-icon matListIcon >face</mat-icon>
+   		
+      <mat-icon *ngIf="!theam.author_avator" matListIcon >face</mat-icon>
+      <img *ngIf="theam.author_avator" matListIcon src="{{theam.author_avator}}" >
 <div class="_2NZd5 forum-text-color avatar" >
 <span class="_2F9CD" data-hook="avatar__name">{{theam.author}}</span>
 <div class="_2GgmO badge" data-hook="badge" *ngIf="theam.author_role=='ADMIN'">
@@ -46,7 +36,7 @@
 	<mat-icon matListIcon>delete_forever</mat-icon>
 </button>
      </div>
-     <div matLine [routerLink]="['/theamfullview']" [queryParams]="theam">
+     <div matLine [routerLink]="['/theamfullview']" [queryParams]="{id:id}">
       	<h4  matLine id="{{theam.id}}">{{theam.title}}</h4>
      </div>
      <p matLine class="demo-2"> {{theam.body}} </p>
