@@ -14,9 +14,7 @@
 
 mat-list{
     overflow: auto;
-	white-space: pre-wrap;
-	
-	
+	white-space: pre-wrap;	
 }
 mat-line{
     overflow: auto;

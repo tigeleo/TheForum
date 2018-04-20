@@ -75,6 +75,7 @@
 
 h2 {
 	color: #27a456;
+	margin-bottom: 3px;
 }
 
 .user-form-div {
@@ -102,4 +103,8 @@ h2 {
 	height: 27px;
 	margin: 5px 0 5px 0;
 	width: 75px;
+}
+.user-form-img-input{
+    width: 195px;
+    display: block;
 }

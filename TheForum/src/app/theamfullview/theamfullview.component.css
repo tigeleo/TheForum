@@ -1,13 +1,18 @@
+
 mat-card-title {
-  color: white;
-  background-color: gray;
-  font-size:20px !important;
+	color: white;
+	background-color: gray;
+	font-size: 20px !important;
+
 }
 
 mat-card {
-  background: #fff;
-  border-radius: 3px;
-  margin: 2rem;
-  border:1px;
+	background: #fff;
+	border-radius: 3px;
+	margin: 2rem;
+	border: 1px;
 }
 
+mat-card-title ,mat-card-subtitle{
+		margin-left:20px;
+}

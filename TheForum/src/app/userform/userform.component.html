@@ -6,7 +6,7 @@
         	<label class="InnerInputLabel" for="password">Avator</label>
 	        <img width="100" height="100" src="{{selectedUser.avator}}" >
 	        <input type="hidden" class="form-control" name="avator" [(ngModel)]="selectedUser.avator" #avator="ngModel"  />
-			<input type="file" accept="image/*" (change)="changeListener($event)">
+			<input class="user-form-img-input" type="file" accept="image/*" (change)="changeListener($event)">
 		</div>
 <div class="user-form-div">
   <label>First name:
