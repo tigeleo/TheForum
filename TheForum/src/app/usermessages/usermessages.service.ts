@@ -15,7 +15,7 @@ export class UsermessagesService {
     
     
     public createNewMessage(model: UserMsg) {
-        //this.loading = true;
-        return this.http.get<UserMsg[]>(myGlobals.backendApiLinks.usersmessages);
+        return this.http.post<UserMsg[]>(myGlobals.backendApiLinks.theamadd, myGlobals.backendApiLinks.usersmessages_add);
+
     }
 }

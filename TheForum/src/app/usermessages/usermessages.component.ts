@@ -10,6 +10,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 //import { UserformComponent } from '../userform/userform.component';
 import { UserMsg } from '../_models/index';
 import { User } from '../_models/index';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
     selector: 'app-usermessages',
@@ -22,9 +23,10 @@ export class UsermessagesComponent implements OnInit {
     formTop: number;
     formLeft: number;
     curUser: User;
-    model: UserMsg;
+    model: UserMsg={id: -1, author: "", text: "", author_role: "", author_avator:""  };
     loading = false;
-
+    thirdSubscription;
+    
     constructor(private route: ActivatedRoute,
         private router: Router,
         private usermessagesService: UsermessagesService,
@@ -38,9 +40,6 @@ export class UsermessagesComponent implements OnInit {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         this.curUser = this.authenticationService.currentUser;
         
-        let userMsg:UserMsg =  {id: -1, fromUserName: this.curUser.username, toUserName: "", title: "", text: ""  };
-         
-        this.model = userMsg;
     }
 
     private loadAllMessages() {
@@ -51,16 +50,32 @@ export class UsermessagesComponent implements OnInit {
                 console.log(this.messages);
             }
         );
+        
+        this.thirdSubscription=Observable.interval(10000).subscribe((val) => {
+            this.usermessagesService.getAll().subscribe(
+                    messages => {
+                        this.messages = messages;
+                        console.log(this.messages);
+                    }
+             );
+        });        
+        
+        
+    }
+    // Multi value observables must manually
+    // unsubscribe to prevent memory leaks.
+    ngOnDestroy() {
+      this.thirdSubscription.unsubscribe();
     }
     public createNewMessage() {
         //this.loading = true;
+   
+        this.model.author = this.curUser.username;
         this.usermessagesService.createNewMessage(this.model)
             .subscribe(
-            data => {
-                console.log(data); 
-                //                    this.theams=data;
-                //                    this.loading = false;
-                //this.router.rnUrl]);
+            messages => {
+                console.log(messages); 
+                this.messages = messages;
                    
             },
             error => {

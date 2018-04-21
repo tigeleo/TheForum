@@ -108,7 +108,12 @@ export class CommentslistComponent implements OnInit {
 
     }
 
-
+    // Multi value observables must manually
+    // unsubscribe to prevent memory leaks.
+    ngOnDestroy() {
+      this.sub.unsubscribe();
+    }
+    
     public get commentsList() {
         //this.loadAllTheams();
         return this.comments;

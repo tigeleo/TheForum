@@ -59,6 +59,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
  
                 return Observable.of(new HttpResponse({ status: 200, body: theams }));
             }
+            
+            // get messages list
+            if (request.url.endsWith(myGlobals.backendApiLinks.usersmessages) && request.method === 'GET') {
+                
+                let messages = myData.DATA_USER_MSG;
+
+ 
+                return Observable.of(new HttpResponse({ status: 200, body: messages }));
+            }
              
             // get discussion list
             if (request.url.endsWith(myGlobals.backendApiLinks.userslist) && request.method === 'GET') {

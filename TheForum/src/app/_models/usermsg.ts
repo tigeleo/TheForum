@@ -1,7 +1,7 @@
 export class UserMsg {
     id: number; 
-    fromUserName: string;
-    toUserName: string;
-    title: string;
+    author:string;
     text: string;
+    author_role: string;
+    author_avator: string;
 }
