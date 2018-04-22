@@ -13,7 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,MatOptionModule,MatSelectModule} from '@angular/material';
 //import { ImageUploadModule } from "angular2-image-upload";
 
 // used to create fake backend
@@ -85,6 +85,8 @@ import { UsermessagesComponent } from './usermessages/usermessages.component';
     MatFormFieldModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatSelectModule,
+    MatOptionModule,
     routing,
 //    ImageUploadModule.forRoot()
   ],

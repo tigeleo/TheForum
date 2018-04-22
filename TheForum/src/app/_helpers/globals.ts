@@ -29,9 +29,10 @@ export const backendApiLinks = {
     userslist: API_BASE_NAME + "/api/users/list/all", // display all registred users
     userslistpage: API_BASE_NAME + "/api/users/list/page", //pagination  registred users
     userupdate: API_BASE_NAME + "/api/users/edit", // update user date
-    usersmessages: API_BASE_NAME + "/api/usermessages/getallbyuser", // get all message by user_to
+    usersmessages: API_BASE_NAME + "/api/usermessages/getallbyuser/", // get all message by user_to id
     usersmessages_add: API_BASE_NAME + "/api/usermessages/add", // get all message by user_to
     usersmessages_regexp: /\/api\/usersmessages\/\d+$/, // get all message by user_to
+
     
     
 //    authenticate: API_BASE_NAME + "/api/login/authenticate",

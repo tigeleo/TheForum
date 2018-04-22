@@ -1,17 +1,24 @@
-<form *ngIf="curUser" name="form" (ngSubmit)="f.form.valid && createNewMessage()" #f="ngForm" novalidate>
-<div class="UFIMentionsInputWrap clearfix" direction="left">
-	<div class="_ohe lfloat">
-		<div class="UFIReplyActorPhotoWrapper img _8o _8r UFIImageBlockImage"	role="presentation">
-			<img alt="{{curUser.firstName}}" class="img UFIActorImage _54ru img"	src="{{curUser.avator}}">
+
+<div *ngIf="isAuthenticated">
+<form *ngIf="curUser" name="form"
+	(ngSubmit)="f.form.valid && createNewMessage()" #f="ngForm" novalidate>
+	<div class="UFIMentionsInputWrap clearfix" direction="left">
+		<div class="_ohe lfloat">
+			<div class="UFIReplyActorPhotoWrapper img _8o _8r UFIImageBlockImage"
+				role="presentation">
+				<img alt="{{curUser.firstName}}" class="img UFIActorImage _54ru img"
+					src="{{curUser.avator}}">
+			</div>
 		</div>
-	</div>
-	<div class="">
-		<div class="UFIImageBlockContent _42ef _8u">
-			<div class="UFICommentContainer">
-				<div class="_fmi _613v UFIInputContainer">
-					<div class="_2xwx _289c" role="presentation">
-						<textarea placeholder="Place Comment: " style="width:100%;border:0" name="text"	tabindex="-1" [(ngModel)]="model.text"  #text="ngModel"></textarea>
-						<!-- div class="UFIAddCommentInput _1osb _2xww _5yk1"			role="presentation">
+		<div class="">
+			<div class="UFIImageBlockContent _42ef _8u">
+				<div class="UFICommentContainer">
+					<div class="_fmi _613v UFIInputContainer">
+						<div class="_2xwx _289c" role="presentation">
+							<textarea placeholder="Place Comment: "
+								style="width: 100%; border: 0" name="text" tabindex="-1"
+								[(ngModel)]="model.text" #text="ngModel"></textarea>
+							<!-- div class="UFIAddCommentInput _1osb _2xww _5yk1"			role="presentation">
 							<div class="_5yk2" tabindex="-1">
 								<div class="_5rp7">
 									<div class="_5rpb">
@@ -23,31 +30,40 @@
 								</div>
 							</div>
 						</div-->
-					</div>
-					<div class="_fmk UFICommentAttachmentButtons _5op2 _15i7 _2kwm">
-						<a aria-label="Вставьте смайлик"
-							class="_r1a UFICommentEmojiButton _5f0v" data-hover="tooltip"
-							data-tooltip-alignh="center"
-							data-tooltip-content="Вставьте смайлик" role="button" href="#"
-							id="js_2y"><div class="UFICommentEmojiIcon"><button>Send</button></div></a>
+						</div>
+						
+						<mat-form-field> 
+							<mat-select placeholder="Select User" [(ngModel)]="model.toUserName" name="user"> 
+								<mat-option *ngFor="let user of users" [value]="user.username"> {{user.username}} </mat-option> 
+							</mat-select> 
+						</mat-form-field>
+
+						<div class="_fmk UFICommentAttachmentButtons _5op2 _15i7 _2kwm">
+							<a aria-label="Ð’Ñ�Ñ‚Ð°Ð²ÑŒÑ‚Ðµ Ñ�Ð¼Ð°Ð¹Ð»Ð¸Ðº"
+								class="_r1a UFICommentEmojiButton _5f0v" data-hover="tooltip"
+								data-tooltip-alignh="center"
+								data-tooltip-content="Ð’Ñ�Ñ‚Ð°Ð²ÑŒÑ‚Ðµ Ñ�Ð¼Ð°Ð¹Ð»Ð¸Ðº"
+								role="button" href="#" id="js_2y"><div
+									class="UFICommentEmojiIcon">
+									<button>Send</button>
+								</div></a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </form>
 
-
 <div id="comment_js_2ur" class="UFIRow _48ph _48pi UFIComment _4oep"
-	role="article" aria-label="Комментарий"
-	data-ft="{&quot;tn&quot;:&quot;R0&quot;}" *ngFor="let message of messages">
+	role="article" aria-label="ÐšÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹"
+	data-ft="{&quot;tn&quot;:&quot;R0&quot;}"
+	*ngFor="let message of messages">
 	<div class="_3b-9">
 		<div>
 			<div direction="left" class="clearfix">
 				<div class="_ohe lfloat">
-					<img alt="Raviv Izhak"
-						class="img UFIActorImage _54ru img"
+					<img alt="Raviv Izhak" class="img UFIActorImage _54ru img"
 						src="{{message.author_avator}}">
 				</div>
 				<div class="">
@@ -56,7 +72,11 @@
 							<div class="UFICommentContent">
 								<div class="_26f8">
 									<div class="_10la _10lg">
-										<span class=" UFICommentActorAndBody"><span class="">{{message.username}}</span> <span><span><div class=" _5wj- _5wj_">
+										<span class=" UFICommentActorAndBody">
+										<span class="">{{message.fromUserName}}</span>																				
+										<span class="">To: {{message.toUserName}}</span>
+										<span class="">Created: {{message.created}}</span>
+											<span><span><div class=" _5wj- _5wj_">
 														<span data-ft="{&quot;tn&quot;:&quot;K&quot;}" dir="auto"
 															lang="en"><span class="UFICommentBody _1n4g">{{message.text}}</span></span>
 													</div></span></span></span>
@@ -75,9 +95,9 @@
 		</div>
 	</div>
 </div>
+</div>
 
 
-<div *ngIf="isAuthenticated"></div>
 <div *ngIf="isNotAuthenticated">
 	<h3 matSubheader>Please logged in to see your messages</h3>
 </div>
