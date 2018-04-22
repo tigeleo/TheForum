@@ -115,4 +115,13 @@ export class UsermessagesComponent implements OnInit {
         return !this.authenticationService.isAuthenticated;
     }
 
+        
+    deleteUserMessage(messageid){
+        this.usermessagesService.deleteUserMessage(messageid).subscribe(
+                messages => { 
+                    this.messages=messages;
+                }
+        );
+    }
+    
 }

@@ -31,6 +31,7 @@ export const backendApiLinks = {
     userupdate: API_BASE_NAME + "/api/users/edit", // update user date
     usersmessages: API_BASE_NAME + "/api/usermessages/getallbyuser/", // get all message by user_to id
     usersmessages_add: API_BASE_NAME + "/api/usermessages/add", // get all message by user_to
+    usersmessages_delete: API_BASE_NAME + "/api/usermessages/delete/", // delete  message by id
     usersmessages_regexp: /\/api\/usersmessages\/\d+$/, // get all message by user_to
 
     
