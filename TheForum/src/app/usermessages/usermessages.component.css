@@ -465,6 +465,7 @@ a {
     position: relative;
 }
 
+
 .postbit_buttons > a:link, .postbit_buttons > a:hover, .postbit_buttons > a:visited, .postbit_buttons > a:active {
     display: inline-block;
     padding: 2px 5px;
