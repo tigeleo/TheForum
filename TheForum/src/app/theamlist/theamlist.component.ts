@@ -95,9 +95,7 @@ export class TheamlistComponent implements OnInit {
         console.log(this.formTop + " + " + this.formLeft);
         this.selectedUser = user;
         */
-    }   
-    
-    
+    }         
     
     deleteTopic(theamid){
         this.theamlistService.deleteTopic(theamid).subscribe(
