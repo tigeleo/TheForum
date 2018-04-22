@@ -24,7 +24,7 @@ export class UsermessagesService {
     }
 
     public deleteUserMessage(messageid: number) {
-        return this.http.get<Theam[]>(myGlobals.backendApiLinks.usersmessages_delete+messageid);
+        return this.http.get<UserMsg[]>(myGlobals.backendApiLinks.usersmessages_delete+messageid);
     }
     
 }

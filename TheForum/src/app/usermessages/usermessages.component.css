@@ -465,4 +465,32 @@ a {
     position: relative;
 }
 
+.postbit_buttons > a:link, .postbit_buttons > a:hover, .postbit_buttons > a:visited, .postbit_buttons > a:active {
+    display: inline-block;
+    padding: 2px 5px;
+    margin: 2px;
+    font-size: 11px;
+    background: #eee url(/assets/images/buttons_bg.png) repeat-x;
+    border: 1px solid #ccc;
+    color: #555;
+}
+.postbit_buttons a span {
+    padding-left: 20px;
+    display: inline-block;
+    height: 16px;
+    background-image: url(/assets/images/buttons_sprite.png);
+    background-repeat: no-repeat;
+}
+.postbit_buttons a.postbit_quote span {
+    background-position: 0 -100px;
+}
+.float_right {
+    float: right;
+}
+.float_left {
+    float: left;
+}
+.postbit_buttons a.postbit_website span {
+    background-position: 0 -60px;
+}
 

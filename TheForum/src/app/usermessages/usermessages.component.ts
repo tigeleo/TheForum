@@ -92,11 +92,11 @@ export class UsermessagesComponent implements OnInit {
         //this.loading = true;
 
         this.model.fromUserName = this.curUser.username;
-        this.usermessagesService.createNewMessage(this.model)
-            .subscribe(
+        this.usermessagesService.createNewMessage(this.model).subscribe(
             messages => {
-                console.log(messages);
-                this.messages = messages;
+                if(messages && messages.length>0){
+                    this.messages = messages;
+                }
 
             },
             error => {
@@ -119,9 +119,13 @@ export class UsermessagesComponent implements OnInit {
     deleteUserMessage(messageid){
         this.usermessagesService.deleteUserMessage(messageid).subscribe(
                 messages => { 
-                    this.messages=messages;
+                    this.messages=this.messages.filter(e=>e.id!=messageid);
                 }
         );
+    }
+    
+    replyUser(fromUserName){
+        this.model.toUserName=fromUserName;
     }
     
 }
