@@ -28,8 +28,10 @@ export const backendApiLinks = {
     commentdelete: API_BASE_NAME + '/api/commentslist/delete/', //delete comment
     userslist: API_BASE_NAME + "/api/users/list/all", // display all registred users
     users_delete: API_BASE_NAME + "/api/users/delete/", // display all registred users
+    user_by_id: API_BASE_NAME + "/api/users/getuserbyid/", //get user by id
     userslistpage: API_BASE_NAME + "/api/users/list/page", //pagination  registred users
     userupdate: API_BASE_NAME + "/api/users/edit", // update user date
+    total_user_length:  API_BASE_NAME + "/api/users/totallenght", // return total users length
     usersmessages: API_BASE_NAME + "/api/usermessages/getallbyuser/", // get all message by user_to id
     usersmessages_add: API_BASE_NAME + "/api/usermessages/add", // get all message by user_to
     usersmessages_delete: API_BASE_NAME + "/api/usermessages/delete/", // delete  message by id

@@ -21,6 +21,7 @@ export class UserslistComponent implements OnInit {
     selectedUser: User;
     formTop: number;
     formLeft: number;
+    totalLength: number;
     
     userPage={pageIndex: 0, pageSize: 10, length: 100};
     
@@ -30,11 +31,11 @@ export class UserslistComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private alertService: AlertService,
         public dialog: MatDialog) {
-        
   }
 
     ngOnInit() {
         this.loadUsersPage();
+        this.totalUsersLength();       
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
@@ -130,10 +131,22 @@ export class UserslistComponent implements OnInit {
          return this.authenticationService.isAuthenticated && this.authenticationService.currentUser.role=='ADMIN';
      }     
     
+    public get currectUser(){
+        return this.authenticationService.currentUser;
+    }
+    
     deleteUser(userid){
         this.userslistService.deleteUser(userid).subscribe(
                 users => { 
                     this.users=this.users.filter(e=>e.id!=userid);
+                }
+        );
+    }
+        
+    totalUsersLength(){
+        return this.userslistService.totalUsersLength().subscribe(
+                totalLength => { 
+                    this.totalLength=totalLength;
                 }
         );
     }

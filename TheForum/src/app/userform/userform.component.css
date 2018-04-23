@@ -108,3 +108,8 @@ h2 {
     width: 195px;
     display: block;
 }
+.alert-message{
+	color:red;
+	margin:2px 0;
+	font-weight: bold;
+}

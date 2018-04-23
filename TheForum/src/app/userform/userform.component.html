@@ -32,6 +32,8 @@
     </select>
   </label>
 </div>
-<div><button (click)="updateUser()" class="user-form-btn">Update</button>
+<div>
+<div class="alert-message" *ngIf="showAlertMessage">{{alertText}}</div>
+<button (click)="updateUser()" class="user-form-btn">Update</button>
 <button (click)="onNoClick()" class="user-form-btn">Close</button></div>
 </div>

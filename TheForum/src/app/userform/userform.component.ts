@@ -14,6 +14,9 @@ import { UserformService } from './userform.service';
 export class UserformComponent implements OnInit {
 
     selectedUser: User;
+    unchangedUser: User;
+    showAlertMessage=false;
+    alertText="";
     loading = false;
 
 
@@ -24,6 +27,7 @@ export class UserformComponent implements OnInit {
 
     ngOnInit() {
         this.selectedUser = this.data;
+        this.getunchangedUser(this.data.id);
     }
 
     onNoClick(): void {
@@ -31,25 +35,46 @@ export class UserformComponent implements OnInit {
     }
 
     updateUser() {
-        this.userformservice.updateUser(this.selectedUser).subscribe(
-            users => {
-                console.log(users);
+        this.userformservice.updateUser(this.selectedUser).subscribe(res => {
+            console.log("res:" res);
+            this.loading = true;
+            this.dialogRef.close();
+        },
+            (error) => {
+                this.getunchangedUser(this.data.id);
+                console.log("Error occured " + error.error);
+                this.alertText=error.error;
+                this.selectedUser = this.unchangedUser;
+                this.data = this.unchangedUser;
+                this.showAlertMessage=true;             
+                this.loading = false;
             }
-        );
-        this.loading = true;
-        this.dialogRef.close();
-    }
-    changeListener($event) : void {
-        this.readThis($event.target);
-      }
 
-      readThis(inputValue: any): void {
-        var file:File = inputValue.files[0];
-        var myReader:FileReader = new FileReader();
+        );
+
+
+
+    }
+
+    changeListener($event): void {
+        this.readThis($event.target);
+    }
+
+    readThis(inputValue: any): void {
+        var file: File = inputValue.files[0];
+        var myReader: FileReader = new FileReader();
 
         myReader.onloadend = (e) => {
-          this.selectedUser.avator=myReader.result;
+            this.selectedUser.avator = myReader.result;
         }
         myReader.readAsDataURL(file);
-      }
+    }
+
+    getunchangedUser(userid: number) {
+        this.userformservice.getunchangedUser(userid).subscribe(
+            user => {
+                this.unchangedUser = user;
+            });
+
+    }
 }

@@ -24,4 +24,8 @@ export class UserslistService {
     public deleteUser(userid: number) {
         return this.http.get<User[]>(myGlobals.backendApiLinks.users_delete+userid);
     }
+    
+     public totalUsersLength() {
+        return this.http.get<number>(myGlobals.backendApiLinks.total_user_length);
+    }   
 }
