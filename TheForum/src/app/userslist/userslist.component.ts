@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { AlertService } from '../_services/index';
+import { AuthenticationService } from '../_services/index';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -26,6 +27,7 @@ export class UserslistComponent implements OnInit {
   constructor(        private route: ActivatedRoute,
         private router: Router,
         private userslistService: UserslistService,
+        private authenticationService: AuthenticationService,
         private alertService: AlertService,
         public dialog: MatDialog) {
         
@@ -114,6 +116,27 @@ export class UserslistComponent implements OnInit {
       return event;
     }    
 
+    public get isAuthenticated() {
+        //console.log("isAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+        return this.authenticationService.isAuthenticated;
+    }
+
+    public get isNotAuthenticated() {
+        // console.log("isNotAuthenticated:this.authenticationService.isAuthenticated="+this.authenticationService.isAuthenticated);
+        return !this.authenticationService.isAuthenticated;
+    }
+    
+     public get isAdmin(){
+         return this.authenticationService.isAuthenticated && this.authenticationService.currentUser.role=='ADMIN';
+     }     
+    
+    deleteUser(userid){
+        this.userslistService.deleteUser(userid).subscribe(
+                users => { 
+                    this.users=this.users.filter(e=>e.id!=userid);
+                }
+        );
+    }
 }
 
 

@@ -114,7 +114,10 @@ export class UsermessagesComponent implements OnInit {
         return !this.authenticationService.isAuthenticated;
     }
 
-        
+   public get isAdmin(){
+         return this.authenticationService.isAuthenticated && this.authenticationService.currentUser.role=='ADMIN';
+     }    
+           
     deleteUserMessage(messageid){
         this.usermessagesService.deleteUserMessage(messageid).subscribe(
                 messages => { 

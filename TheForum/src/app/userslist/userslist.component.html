@@ -5,7 +5,11 @@
       	<mat-icon *ngIf="!user.avator" matListIcon [routerLink]="['/userdetailsform']" [queryParams]="user">person</mat-icon>
    		<img *ngIf="user.avator" height="30" width="30" src="{{user.avator}}" >
       	<span class="users badge">{{user.id}}</span>{{user.firstname}}, {{user.lastname}}, {{user.role}}
+
       </li>
+		<button class="user-delete-button"		*ngIf="isAuthenticated && (isAdmin || curUser.username==user.username)"	mat-button (click)="deleteUser(user.id)">
+			<mat-icon matListIcon>delete_forever</mat-icon>
+		</button>
    </mat-list-item>
    
 

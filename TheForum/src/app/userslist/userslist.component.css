@@ -105,3 +105,6 @@ li:hover {
 	padding: 4px 9px 0px 4px;
 	display: inline-block;
 }
+button.user-delete-button{
+	float:right;
+}

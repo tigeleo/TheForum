@@ -20,4 +20,8 @@ export class UserslistService {
     getUsersPage(userPageDef){
         return this.http.post<User[]>(myGlobals.backendApiLinks.userslistpage,userPageDef);
     }
+    
+    public deleteUser(userid: number) {
+        return this.http.get<User[]>(myGlobals.backendApiLinks.users_delete+userid);
+    }
 }
