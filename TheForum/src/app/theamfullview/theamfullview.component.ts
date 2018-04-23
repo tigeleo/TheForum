@@ -51,7 +51,11 @@ export class TheamfullviewComponent implements OnInit {
                 }
             );
         //this.theam = {id:id,title:title, body:body,author:author,author_role:author_role,watchers:watchers,comments:comments,created:created};    
-      });
+       this.theamfullviewService.theamWatcher(id).subscribe(
+                res => { 
+                    console.log(res);                   
+              });
+       });
      this.returnUrl = '/theamslist';
 
 

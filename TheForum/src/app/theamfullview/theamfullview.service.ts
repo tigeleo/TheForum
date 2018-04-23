@@ -10,10 +10,12 @@ export class TheamfullviewService {
 
   constructor(private http: HttpClient) { }
     getById(diccutionid: number) {
-        return this.http.get<Theam>(myGlobals.backendApiLinks.theamget+diccutionid);
+        return this.http.get<Theam>(myGlobals.backendApiLinks.theamget + diccutionid);
     }
     
-
+    theamWatcher(diccutionid: number) {
+        return this.http.post<any>(myGlobals.backendApiLinks.theamwatcher + diccutionid);
+    }
     
 
 }
