@@ -36,7 +36,7 @@ export class UserformComponent implements OnInit {
 
     updateUser() {
         this.userformservice.updateUser(this.selectedUser).subscribe(res => {
-            console.log("res:" res);
+            console.log("res:" + res);
             this.loading = true;
             this.dialogRef.close();
         },

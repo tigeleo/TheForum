@@ -22,7 +22,7 @@ export const backendApiLinks = {
     theamadd: API_BASE_NAME + '/api/discusse/add', //discussion add
     theamdelete: API_BASE_NAME + '/api/discusse/delete/', //discussion delete   
     theamget: API_BASE_NAME + '/api/discusse/getbyid/', //discussion get by ID  for discussion full list    
-    theamwatcher: API_BASE_NAME + '/api/discusse/theamwatcher/'//up disscusion wathcers counter
+    theamwatcher: API_BASE_NAME + '/api/discusse/theamwatcher/',//up disscusion wathcers counter
     commentslist: API_BASE_NAME + '/api/commentslist/',// display all  comments by discussion id
     commentslist_regexp: /\/api\/commentslist\/\d+$/,
     commentadd: API_BASE_NAME + '/api/commentslist/add', //add comment
