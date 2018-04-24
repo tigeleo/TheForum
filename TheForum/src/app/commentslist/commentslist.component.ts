@@ -78,7 +78,7 @@ export class CommentslistComponent implements OnInit {
 
         );
 
-        this.sub = Observable.interval(10000).subscribe((val) => {
+        this.sub = Observable.interval(1000).subscribe((val) => {
             this.commentslistService.getById(this.discussionid).subscribe(
                 comments => {
                     if (comments && comments.length > 0) {
