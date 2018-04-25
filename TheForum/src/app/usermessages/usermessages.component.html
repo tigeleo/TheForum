@@ -16,16 +16,22 @@
 					<div class="UFICommentContainer">
 						<div class="_fmi _613v UFIInputContainer">
 							<div class="_2xwx _289c" role="presentation">
-								<textarea placeholder="Place Comment: "	style="width: 100%; border: 0" name="text" tabindex="-1"	[(ngModel)]="model.text" #text="ngModel"></textarea>
+								<textarea placeholder="Place Comment: "
+									style="width: 100%; border: 0" name="text" tabindex="-1"
+									[(ngModel)]="model.text" #text="ngModel"></textarea>
 							</div>
-							<mat-form-field> 
-								<mat-select	placeholder="Select User" [(ngModel)]="model.toUserName"	name="toUserName" #toUserName="ngModel"> 
-									<mat-option *ngFor="let user of users"	[value]="user.username"> {{user.username}} </mat-option> 
-								</mat-select> 
-							</mat-form-field>
+							<mat-form-field> <mat-select
+								placeholder="Select User" [(ngModel)]="model.toUserName"
+								name="toUserName" #toUserName="ngModel"> <mat-option
+								*ngFor="let user of users" [value]="user.username">
+							{{user.username}} </mat-option> </mat-select> </mat-form-field>
 
 							<div class="_fmk UFICommentAttachmentButtons _5op2 _15i7 _2kwm">
-								<div class="UFICommentEmojiIcon"><button><mat-icon>send</mat-icon></button></div>
+								<div class="UFICommentEmojiIcon">
+									<button>
+										<mat-icon>send</mat-icon>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -34,12 +40,14 @@
 		</div>
 	</form>
 
-	<div id="comment_js_2ur" class="UFIRow _48ph _48pi UFIComment _4oep"		role="article" 	*ngFor="let message of messages">
+	<div id="comment_js_2ur" class="UFIRow _48ph _48pi UFIComment _4oep"
+		role="article" *ngFor="let message of messages">
 		<div class="_3b-9">
 			<div>
 				<div direction="left" class="clearfix">
 					<div class="_ohe lfloat">
-						<img alt="Raviv Izhak" class="img UFIActorImage _54ru img"		src="{{message.author_avator}}">
+						<img alt="Raviv Izhak" class="img UFIActorImage _54ru img"
+							src="{{message.author_avator}}">
 					</div>
 					<div class="">
 						<div class="UFIImageBlockContent _42ef">
@@ -48,33 +56,40 @@
 									<div class="_26f8">
 										<div class="_10la _10lg">
 											<span class=" UFICommentActorAndBody"> <span class="">{{message.fromUserName}}</span>
-												<span class="">To: {{message.toUserName}}</span> 
-												<span class="">Created: {{message.created}}</span> 
-												<span>
-												<span>
-												<div class=" _5wj- _5wj_">
-	<span data-ft="{&quot;tn&quot;:&quot;K&quot;}" dir="auto"	lang="en"><span class="UFICommentBody _1n4g">{{message.text}}</span></span>
-												</div>
+												<span class="">To: {{message.toUserName}}</span> <span
+												class="">Created: {{message.created}}</span> <span> <span>
+														<div class=" _5wj- _5wj_">
+															<span data-ft="{&quot;tn&quot;:&quot;K&quot;}" dir="auto"
+																lang="en"><span class="UFICommentBody _1n4g">{{message.text}}</span></span>
+														</div>
 												</span>
-												</span>
+											</span><span>
+													<button
+														*ngIf="isAuthenticated && (isAdmin || curUser.username==message.fromUserName)"
+														mat-button (click)="deleteUserMessage(message.id)">
+														<mat-icon matListIcon>delete_forever</mat-icon>
+													</button>
+
+													<button *ngIf="message.fromUserName!=curUser.username"
+														(click)="replyUser(message.fromUserName)">
+														<mat-icon>reply</mat-icon>
+													</button>
+
+
+											</span>
 											</span>
 
 										</div>
 
 									</div>
 									<span></span>
-									<div>
-	<div *ngIf="message.fromUserName!=curUser.username" class="postbit_buttons post_management_buttons float_right">
-		<button  (click)="replyUser(message.fromUserName)"><mat-icon>reply</mat-icon></button>
-	</div>							</div>
+
 								</div>
 
 							</div>
 						</div>
 					</div>
-					<button		*ngIf="isAuthenticated && (isAdmin || curUser.username==message.fromUserName)"	mat-button (click)="deleteUserMessage(message.id)">
-						<mat-icon matListIcon>delete_forever</mat-icon>
-					</button>
+
 				</div>
 			</div>
 		</div>

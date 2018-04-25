@@ -1,38 +1,50 @@
-<mat-list>
-   <h3 matSubheader>List of all registered users</h3>
-   <mat-list-item *ngFor="let user of users">
-      <li matLine id="{{user.id}}" (click)="onSelect(user)" [class.selected]="user === selectedUser">
-      	<mat-icon *ngIf="!user.avator" matListIcon [routerLink]="['/userdetailsform']" [queryParams]="user">person</mat-icon>
-   		<img *ngIf="user.avator" height="30" width="30" src="{{user.avator}}" >
-      	<span class="users badge">{{user.id}}</span>{{user.firstname}}, {{user.lastname}}, {{user.role}}
+<div *ngIf="isAdmin">
+	<mat-list>
+	<h3 matSubheader>List of all registered users</h3>
+	<mat-list-item *ngFor="let user of users">
+	<li matLine id="{{user.id}}" (click)="onSelect(user)"
+		[class.selected]="user === selectedUser"><mat-icon
+			*ngIf="!user.avator" matListIcon [routerLink]="['/userdetailsform']"
+			[queryParams]="user">person</mat-icon> <img *ngIf="user.avator"
+		height="30" width="30" src="{{user.avator}}"> <span
+		class="users badge">{{user.id}}</span>{{user.firstname}},
+		{{user.lastname}}, {{user.role}}</li>
+	<button class="user-delete-button"
+		*ngIf="isAuthenticated && isAdmin && currectUser.id != user.id  "
+		mat-button (click)="deleteUser(user.id)">
+		<mat-icon matListIcon>delete_forever</mat-icon>
+	</button>
+	</mat-list-item> </mat-list>
+	<mat-paginator [length]="totalLength" [pageSize]="10"
+		[pageSizeOptions]="[5, 10, 25, 100]"
+		(page)="pageEvent = getServerData($event)"> </mat-paginator>
 
-      </li>
-		<button class="user-delete-button"		*ngIf="isAuthenticated && isAdmin && currectUser.id != user.id  "	mat-button (click)="deleteUser(user.id)">
-			<mat-icon matListIcon>delete_forever</mat-icon>
-		</button>
-   </mat-list-item>
-   
-
-</mat-list>
-<mat-paginator [length]="totalLength"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"  
-              (page)="pageEvent = getServerData($event)">
-</mat-paginator>
-
-<div *ngIf="selectedUser" style="position: fixed;visibility: visible;z-index: 200;left:{{(formLeft | number:0)*1}}px;top:{{formTop}}px">
-<h2>{{ selectedUser.firstname | uppercase }} Details</h2>
-<div><span>id: </span>{{selectedUser.id}}</div>
-<div>
-  <label>First name:
-    <input [(ngModel)]="selectedUser.firstname" placeholder="First Name">
-  </label>
-</div><div>  <label>Second name:
-    <input [(ngModel)]="selectedUser.lastname" placeholder="Last Name">
-  </label>
-</div><div>  <label>Role:
-    <input [(ngModel)]="selectedUser.role" placeholder="Role">
-  </label>
+	<div *ngIf="selectedUser"
+		style="position: fixed; visibility: visible; z-index: 200; left: {{(formLeft| number:0)*1">
+		<h2>{{ selectedUser.firstname | uppercase }} Details</h2>
+		<div>
+			<span>id: </span>{{selectedUser.id}}
+		</div>
+		<div>
+			<label>First name: <input
+				[(ngModel)]="selectedUser.firstname" placeholder="First Name">
+			</label>
+		</div>
+		<div>
+			<label>Second name: <input
+				[(ngModel)]="selectedUser.lastname" placeholder="Last Name">
+			</label>
+		</div>
+		<div>
+			<label>Role: <input [(ngModel)]="selectedUser.role"
+				placeholder="Role">
+			</label>
+		</div>
+		<div>
+			<button (click)="updateUser(selectedUser)">Update</button>
+		</div>
+	</div>
 </div>
-<div><button (click)="updateUser(selectedUser)">Update</button></div>
+<div *ngIf="!isAdmin">
+	<h3 matSubheader>Please logged as admin in to manage user list</h3>
 </div>
