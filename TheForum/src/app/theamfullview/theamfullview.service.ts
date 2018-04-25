@@ -14,7 +14,7 @@ export class TheamfullviewService {
     }
     
     theamWatcher(diccutionid: number) {
-        return this.http.post<any>(myGlobals.backendApiLinks.theamwatcher, diccutionid);
+        return this.http.get<any>(myGlobals.backendApiLinks.theamwatcher + diccutionid);
     }
     
 
