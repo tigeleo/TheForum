@@ -17,7 +17,7 @@
 						<div class="_fmi _613v UFIInputContainer">
 							<div class="_2xwx _289c" role="presentation">
 								<textarea placeholder="Place Comment: "
-									style="width: 100%; border: 0" name="text" tabindex="-1"
+									style="width: 98%; border: 0;" name="text" tabindex="-1"
 									[(ngModel)]="model.text" #text="ngModel"></textarea>
 							</div>
 							<mat-form-field> <mat-select
@@ -26,7 +26,7 @@
 								*ngFor="let user of users" [value]="user.username">
 							{{user.username}} </mat-option> </mat-select> </mat-form-field>
 
-							<div class="_fmk UFICommentAttachmentButtons _5op2 _15i7 _2kwm">
+							<div class="user-message-send-btn _fmk UFICommentAttachmentButtons _5op2 _15i7 _2kwm">
 								<div class="UFICommentEmojiIcon">
 									<button>
 										<mat-icon>send</mat-icon>
@@ -55,10 +55,11 @@
 								<div class="UFICommentContent">
 									<div class="_26f8">
 										<div class="_10la _10lg">
-											<span class=" UFICommentActorAndBody"> <span class="">{{message.fromUserName}}</span>
+											<span class=" UFICommentActorAndBody"><span class="user-message-title"> <span class="">{{message.fromUserName}}</span>
 												<span class="">To: {{message.toUserName}}</span> <span
-												class="">Created: {{message.created}}</span> <span> <span>
-														<div class=" _5wj- _5wj_">
+												class="">, sended: {{message.created}}</span></span>
+												 <span> <span>
+														<div class="user-message-text _5wj- _5wj_">
 															<span data-ft="{&quot;tn&quot;:&quot;K&quot;}" dir="auto"
 																lang="en"><span class="UFICommentBody _1n4g">{{message.text}}</span></span>
 														</div>

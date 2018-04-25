@@ -301,9 +301,9 @@ body {
     padding: 0;
     unicode-bidi: embed;
 }
-._5wj- {
+/* ._5wj- {
     text-align: right;
-}
+} */
 ._3-a6._65_9 .UFICommentActorAndBody, ._o0o ._3-a6._65_9 .UFICommentActorAndBody {
     background-color: #eff1f3;
 }
@@ -494,4 +494,22 @@ a {
 .postbit_buttons a.postbit_website span {
     background-position: 0 -60px;
 }
+.user-message-text
+{
+	display:block;
+/* 	background: white; */
+	margin: 5px 0;
+	padding: 5px 5px;
+	border-radius: 5px;
+	min-height: 30px;
+}
+.user-message-title{
+	font-weight: bold;
+	color: #27a456;
+}
+.mat-form-field{
+}
 
+.user-message-send-btn{
+	margin:0 5px ;
+}
